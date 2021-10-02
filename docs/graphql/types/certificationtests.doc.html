@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="https://app.codesignal.com/img/favicon-32x32.png" sizes="32x32"/>
-    <title>InterviewerFeedback | CodeSignal GraphQL API</title>
+    <title>CertificationTests | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -266,7 +266,7 @@
                 CertificationRequestResult
             </a>
         </li>
-        <li  title="CertificationTests">
+        <li class="slds-is-active" title="CertificationTests">
             <a href="certificationtests.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CertificationTests
             </a>
@@ -371,7 +371,7 @@
                 Integrations
             </a>
         </li>
-        <li class="slds-is-active" title="InterviewerFeedback">
+        <li  title="InterviewerFeedback">
             <a href="interviewerfeedback.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 InterviewerFeedback
             </a>
@@ -862,8 +862,9 @@
     </div>
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">InterviewerFeedback</h1>
-        <div class="slds-text-body--regular"></div>
+        <h1 class="slds-text-heading--large">CertificationTests</h1>
+        <div class="slds-text-body--regular"><p>Query result of certification tests with metadata.</p>
+</div>
     </div>
 </section>
 <section>
@@ -874,7 +875,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">InterviewerFeedback</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Interviewer who provided the feedback.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">author</span>: <a class="support type" href="user.doc.html">User</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   Overall notes about the candidate.</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">notes</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="meta">categories</span>: [<a class="support type" href="interviewerfeedbackcategory.doc.html">InterviewerFeedbackCategory</a>] </span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"><span class="tab"><span class="meta">recommendedLevel</span>: <a class="support type" href="string.doc.html">String</a> </span></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="meta">overallEvaluation</span>: <a class="support type" href="interviewerfeedbackoverallevaluation.doc.html">InterviewerFeedbackOverallEvaluation</a> </span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">CertificationTests</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Total count of the certification tests available to the company.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">totalCount</span>: <a class="support type" href="int.doc.html">Int</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   The list of certification tests.</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">tests</span>: [<a class="support type" href="standardizedtest.doc.html">StandardizedTest</a>]! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   Page info of the query. See PageInfo for full description.</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">pageInfo</span>: <a class="support type" href="pageinfo.doc.html">PageInfo</a>! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -885,7 +886,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="liveinterview.doc.html" title="LiveInterview - A live interview defines a collaboration programming session.">LiveInterview<em>A live interview defines a collaboration programming session.</em></a><li></ul>
+        <ul class="require-by"><li><a href="query.doc.html" title="Query - ">Query<em></em></a><li></ul>
     </div>
 </section>
 <footer>
