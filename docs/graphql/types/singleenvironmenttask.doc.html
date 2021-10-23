@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="https://app.codesignal.com/img/favicon-32x32.png" sizes="32x32"/>
-    <title>Task | CodeSignal GraphQL API</title>
+    <title>SingleEnvironmentTask | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -526,6 +526,11 @@
                 ServicePlan
             </a>
         </li>
+        <li class="slds-is-active" title="SingleEnvironmentTask">
+            <a href="singleenvironmenttask.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SingleEnvironmentTask
+            </a>
+        </li>
         <li  title="SolutionSource">
             <a href="solutionsource.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 SolutionSource
@@ -544,11 +549,6 @@
         <li  title="StandardizedTestSessionResult">
             <a href="standardizedtestsessionresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 StandardizedTestSessionResult
-            </a>
-        </li>
-        <li class="slds-is-active" title="Task">
-            <a href="task.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                Task
             </a>
         </li>
         <li  title="TaskLevel">
@@ -957,7 +957,7 @@
     </div>
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">Task</h1>
+        <h1 class="slds-text-heading--large">SingleEnvironmentTask</h1>
         <div class="slds-text-body--regular"><p>A task that is in the single-environment format</p>
 </div>
     </div>
@@ -970,7 +970,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">Task</span> <span class="keyword operator ts">implements</span> <a class="support type" href="commontask.doc.html">CommonTask</a> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Unique identifier.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   The display name of the task.</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   The text of the question that will be shown to the user.</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">description</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   The task type</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="meta">generalType</span>: <a class="support type" href="generaltype.doc.html">GeneralType</a>! </span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="comment line">#   The labels associated with this task.</span></span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"><span class="tab"><span class="meta">labels</span>: [<a class="support type" href="string.doc.html">String</a>]! </span></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code"></td></tr><tr class="row"><td id="L18" class="td-index">18</td><td id="LC18" class="td-code"><span class="tab"><span class="comment line">#   The task levels of a progressive task</span></span></td></tr><tr class="row"><td id="L19" class="td-index">19</td><td id="LC19" class="td-code"><span class="tab"><span class="meta">levels</span>: [<a class="support type" href="tasklevel.doc.html">TaskLevel</a>] </span></td></tr><tr class="row"><td id="L20" class="td-index">20</td><td id="LC20" class="td-code"></td></tr><tr class="row"><td id="L21" class="td-index">21</td><td id="LC21" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">SingleEnvironmentTask</span> <span class="keyword operator ts">implements</span> <a class="support type" href="commontask.doc.html">CommonTask</a> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Unique identifier.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   The display name of the task.</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   The text of the question that will be shown to the user.</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">description</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   The task type</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="meta">generalType</span>: <a class="support type" href="generaltype.doc.html">GeneralType</a>! </span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="comment line">#   The labels associated with this task.</span></span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"><span class="tab"><span class="meta">labels</span>: [<a class="support type" href="string.doc.html">String</a>]! </span></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code"></td></tr><tr class="row"><td id="L18" class="td-index">18</td><td id="LC18" class="td-code"><span class="tab"><span class="comment line">#   The task levels of a progressive task</span></span></td></tr><tr class="row"><td id="L19" class="td-index">19</td><td id="LC19" class="td-code"><span class="tab"><span class="meta">levels</span>: [<a class="support type" href="tasklevel.doc.html">TaskLevel</a>] </span></td></tr><tr class="row"><td id="L20" class="td-index">20</td><td id="LC20" class="td-code"></td></tr><tr class="row"><td id="L21" class="td-index">21</td><td id="LC21" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -981,11 +981,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="interviewtemplate.doc.html" title="InterviewTemplate - An interview template defines a set of tasks relevant for a specialized interview">InterviewTemplate<em>An interview template defines a set of tasks relevant for a specialized interview</em></a><li><li><a href="mutation.doc.html" title="Mutation - ">Mutation<em></em></a><li><li><a href="query.doc.html" title="Query - ">Query<em></em></a><li><li><a href="tasklevel.doc.html" title="TaskLevel - A level of a progressive task.">TaskLevel<em>A level of a progressive task.</em></a><li><li><a href="testsessiontask.doc.html" title="TestSessionTask - A task given to the test taker in a test instance.
-
-- Cost complexity: 1">TestSessionTask<em>A task given to the test taker in a test instance.
-
-- Cost complexity: 1</em></a><li></ul>
+        <ul class="require-by"><li><a href="mutation.doc.html" title="Mutation - ">Mutation<em></em></a><li><li><a href="query.doc.html" title="Query - ">Query<em></em></a><li><li><a href="tasklevel.doc.html" title="TaskLevel - A level of a progressive task.">TaskLevel<em>A level of a progressive task.</em></a><li></ul>
     </div>
 </section>
 <footer>
