@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="https://app.codesignal.com/img/favicon-32x32.png" sizes="32x32"/>
-    <title>DatabaseTask | CodeSignal GraphQL API</title>
+    <title>CoreSkillScores | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -361,7 +361,7 @@
                 Contact
             </a>
         </li>
-        <li  title="CoreSkillScores">
+        <li class="slds-is-active" title="CoreSkillScores">
             <a href="coreskillscores.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CoreSkillScores
             </a>
@@ -381,7 +381,7 @@
                 DatabaseEnvironmentType
             </a>
         </li>
-        <li class="slds-is-active" title="DatabaseTask">
+        <li  title="DatabaseTask">
             <a href="databasetask.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 DatabaseTask
             </a>
@@ -967,8 +967,8 @@
     </div>
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">DatabaseTask</h1>
-        <div class="slds-text-body--regular"><p>A database task.</p>
+        <h1 class="slds-text-heading--large">CoreSkillScores</h1>
+        <div class="slds-text-body--regular"><p>Core skill scores determined by the assessment result</p>
 </div>
     </div>
 </section>
@@ -980,7 +980,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">DatabaseTask</span> <span class="keyword operator ts">implements</span> <a class="support type" href="commontask.doc.html">CommonTask</a> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Unique identifier.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   The display name of the task.</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   The task type</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">generalType</span>: <a class="support type" href="generaltype.doc.html">GeneralType</a>! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   The labels associated with this task.</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="meta">labels</span>: [<a class="support type" href="string.doc.html">String</a>]! </span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="meta">executionEnvironments</span>: <a class="support type" href="databaseenvironmenttype.doc.html">DatabaseEnvironmentType</a> </span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">CoreSkillScores</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">implementation</span>: <a class="support type" href="int.doc.html">Int</a> </span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">problemSolving</span>: <a class="support type" href="int.doc.html">Int</a> </span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">speed</span>: <a class="support type" href="int.doc.html">Int</a> </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -991,7 +991,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="mutation.doc.html" title="Mutation - ">Mutation<em></em></a><li></ul>
+        <ul class="require-by"><li><a href="companytestsessionresult.doc.html" title="CompanyTestSessionResult - The result of a completed company test session.">CompanyTestSessionResult<em>The result of a completed company test session.</em></a><li><li><a href="standardizedtestsessionresult.doc.html" title="StandardizedTestSessionResult - The result of a completed standardized test session.">StandardizedTestSessionResult<em>The result of a completed standardized test session.</em></a><li><li><a href="testsessionresult.doc.html" title="TestSessionResult - ">TestSessionResult<em></em></a><li></ul>
     </div>
 </section>
 <footer>
