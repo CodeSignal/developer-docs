@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="https://app.codesignal.com/img/favicon-32x32.png" sizes="32x32"/>
-    <title>ScoreRange | CodeSignal GraphQL API</title>
+    <title>TaskCustomScore | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -526,7 +526,7 @@
                 Role
             </a>
         </li>
-        <li class="slds-is-active" title="ScoreRange">
+        <li  title="ScoreRange">
             <a href="scorerange.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 ScoreRange
             </a>
@@ -566,7 +566,7 @@
                 StandardizedTestSessionResult
             </a>
         </li>
-        <li  title="TaskCustomScore">
+        <li class="slds-is-active" title="TaskCustomScore">
             <a href="taskcustomscore.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 TaskCustomScore
             </a>
@@ -982,9 +982,8 @@
     </div>
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">ScoreRange</h1>
-        <div class="slds-text-body--regular"><p>Score range of result labels. Boundaries are inclusive.</p>
-</div>
+        <h1 class="slds-text-heading--large">TaskCustomScore</h1>
+        <div class="slds-text-body--regular"></div>
     </div>
 </section>
 <section>
@@ -995,7 +994,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">ScoreRange</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">min</span>: <a class="support type" href="int.doc.html">Int</a> </span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">max</span>: <a class="support type" href="int.doc.html">Int</a> </span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">TaskCustomScore</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">score</span>: <a class="support type" href="int.doc.html">Int</a>! </span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -1006,7 +1005,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="scorerangelabel.doc.html" title="ScoreRangeLabel - Automatically assign a label when the candidate scores within a given inclusive range.">ScoreRangeLabel<em>Automatically assign a label when the candidate scores within a given inclusive range.</em></a><li></ul>
+        <ul class="require-by"><li><a href="interviewtemplate.doc.html" title="InterviewTemplate - An interview template defines a set of tasks relevant for a specialized interview">InterviewTemplate<em>An interview template defines a set of tasks relevant for a specialized interview</em></a><li></ul>
     </div>
 </section>
 <footer>
