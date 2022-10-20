@@ -1,7 +1,7 @@
 {
   "name": "developer-docs",
   "version": "1.0.0",
-  "description": "The most advanced technical assessment platform.",
+  "description": "The most advanced technical interview and assessment platform.",
   "main": "",
   "scripts": {
     "build": "rm -rf docs/graphql/types && graphqldoc --force",
@@ -25,7 +25,7 @@
     "endpoint": "https://app.codesignal.com/graphql",
     "output": "./docs/graphql/types",
     "title": "CodeSignal GraphQL API",
-    "favicon": "<link rel=\"icon\" type=\"image/png\" href=\"https://app.codesignal.com/img/favicon-32x32.png\" sizes=\"32x32\"/>",
-    "logo": "<a href=\"https://codesignal.com\" target=\"_blank\" style=\"display:block;\"><img src=\"https://codefightsuserpics.s3.amazonaws.com/uploads/1616469365564/logo-main.png\" width=\"200\" /></a>"
+    "favicon": "<link rel=\"icon\" type=\"image/png\" href=\"/images/favicon.png\" sizes=\"32x32\"/>",
+    "logo": "<a href=\"https://codesignal.com\" target=\"_blank\" style=\"display:block;\"><img src=\"/images/logo.png\" width=\"200\" /></a>"
   }
 }

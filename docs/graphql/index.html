@@ -2,31 +2,26 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="https://app.codesignal.com/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&family=Work+Sans:wght@400;700&display=auto" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32"/>
     <title>CodeSignal GraphQL API</title>
     <meta name="description" content="GraphQL API documentation for the most advanced technical assessment solution on the market."/>
     <link type="text/css" rel="stylesheet" href="index.css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu+Mono" rel="stylesheet">
 </head>
 
 <body>
     <div class="page-container">
         <div class="page-body">
             <div class="header">
-                <div class="header-left">
-                    <a href="https://codesignal.com" class="logo-link">
-                        <img alt="CodeSignal home" src="https://codefightsuserpics.s3.amazonaws.com/uploads/1616469365564/logo-main.png" width="200">
-                    </a>
-                </div>
-                <div class="header-right">
-                    <h1 class="header-title">CodeSignal GraphQL API</h1>
-                    <div class="header-subtitle">The most advanced technical assessment platform.</div>
-                </div>
-            </div>
-            <div class="schema-link">
-                <a href="types/index.html" class="mono">Explore the schema</a>
+                <a href="https://codesignal.com" class="logo-link">
+                    <img alt="CodeSignal home" src="/images/logo.png" width="200">
+                </a>
             </div>
             <div class="main-content">
+                <h1 class="mono">GraphQL API</h1>
+                <a class="doc-link schema-link" href="types/index.html">Explore the schema</a>
                 <div class="section">
                     <h2>Introduction</h2>
                     <div class="subsection">
@@ -188,13 +183,13 @@
                         <p>
                             A REST API is like a shopper who can only buy one item from the grocery store at a time.
                             They can get any item in the store, but only one; if you want a second item, they have to make another full round-trip.
-                            For this kind of API, the main limit is a “rate limit” — in other words, how frequently you can ask the shopper to go to the store.
+                            For this kind of API, the main limit is a "rate limit." In other words, how frequently can you ask the shopper to go to the store?
                         </p>
                         <p>
-                            On the other hand, GraphQL APIs are like shoppers who can buy a whole cart’s worth of goods. Convenient!
+                            On the other hand, GraphQL APIs are like shoppers who can buy a whole cart's worth of goods. Convenient!
                             Like REST API shoppers, they may also have a limit on how frequently they can go to the store (a rate limit),
                             but they can bring back a lot more groceries per trip. However, if you order too many things at once,
-                            they won’t all fit in the shopping cart. The size of the shopping cart is the "maximum cost" allowed per trip.
+                            they won't all fit in the shopping cart. The size of the shopping cart is the "maximum cost" allowed per trip.
                         </p>
                     </div>
                     <div class="subsection">
@@ -213,8 +208,9 @@
                     </div>
                 </div>
                 <div class="section">
+                    <a class="doc-link" href="types/index.html">GraphQL Schema</a>
+                    <a class="doc-link" href="../webhooks/">Webhook API</a>
                     <a class="doc-link" href="../">Developer Home</a>
-                    <a class="doc-link" href="../webhooks/">Webhooks</a>
                 </div>
             </div>
         </div>
