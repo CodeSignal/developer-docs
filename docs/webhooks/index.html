@@ -255,36 +255,36 @@
 <h3 id="testworkflow">Test webhooks process flow</h3>
 <img alt="Diagram of webhooks process flow for CodeSignal Test" width="100%" src="https://codesignal.com/wp-content/uploads/2021/03/webhooksproces_test.png" />
 </div>
-<div class="subsection">
-    <h3 id="companyTestSessionCreated">companyTestSessionCreated</h3>
-    <p>
-        Fired when a client creates a test session.
-    </p>
-    <div>Request format:</div>
-    <pre><code>{
-event: 'companyTestSessionCreated',
-triggeredOn: number,
-payload: {
-testSessionId: string,
-testId: string,
-testTitle: string,
-candidateEmail: string,
-candidateName: string
-}
+                <div class="subsection">
+                    <h3 id="companyTestSessionCreated">companyTestSessionCreated</h3>
+                    <p>
+                        Fired when a test session is created.
+                    </p>
+                    <div>Request format:</div>
+                    <pre><code>{
+  event: 'companyTestSessionCreated',
+  triggeredOn: number,
+  payload: {
+    testSessionId: string,
+    testId: string,
+    testTitle: string,
+    candidateEmail: string,
+    candidateName: string
+  }
 };</code></pre>
-    <div>Sample request:</div>
-    <pre><code>{
-event: 'companyTestSessionCreated',
-triggeredOn: 1553720789347,
-payload: {
-testSessionId: 'lehu382hdleh29',
-testId: 'dhey29hcl28hl28',
-testTitle: 'Software Engineer intern',
-candidateEmail: 'john.doe@gmail.com',
-candidateName: 'John Doe'
-}
+                    <div>Sample request:</div>
+                    <pre><code>{
+  event: 'companyTestSessionCreated',
+  triggeredOn: 1553720789347,
+  payload: {
+    testSessionId: 'lehu382hdleh29',
+    testId: 'dhey29hcl28hl28',
+    testTitle: 'Software Engineer intern',
+    candidateEmail: 'john.doe@gmail.com',
+    candidateName: 'John Doe'
+  }
 };</code></pre>
-</div>
+                </div>
                 <div class="subsection">
                     <h3 id="companyTestSessionStarted">companyTestSessionStarted</h3>
                     <p>
