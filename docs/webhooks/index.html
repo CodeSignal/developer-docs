@@ -40,10 +40,26 @@
                         </ul>
                         <li>Events for CodeSignal Test</li>
                         <ul>
-                            <li><a href="#testworkflow">Test webhooks process flow</a></li>
-                            <li><a href="#companyTestSessionCreated">companyTestSessionCreated</a></li>
-                            <li><a href="#companyTestSessionStarted">companyTestSessionStarted</a></li>
-                            <li><a href="#companyTestSessionFinished">companyTestSessionFinished</a></li>
+                            <li><a href="#candidateworkflow">Candidate workflow</a>
+                                <ul>
+                                    <li><a href="#preScreenCandidateDeclined">preScreenCandidateDeclined</a></li>
+                                    <li><a href="#preScreenExpired">preScreenExpired</a></li>
+                                    <li><a href="#companyTestSessionStarted">companyTestSessionStarted</a></li>
+                                    <li><a href="#preScreenResultVerificationPending">preScreenResultVerificationPending</a></li>
+                                    <li><a href="#companyTestSessionFinished">companyTestSessionFinished</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#auditorworkflow">CodeSignal auditor workflow</a>
+                                <ul>
+                                    <li><a href="#preScreenResultNotVerified">preScreenResultNotVerified</a></li>
+                                    <li><a href="#preScreenResultVerified">preScreenResultVerified</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#clientworkflow">Company Client workflow</a>
+                                <ul>
+                                    <li><a href="#companyTestSessionCreated">companyTestSessionCreated</a></li>
+                                </ul>
+                            </li>
                         </ul>
                         <li>Events for CodeSignal Certify</li>
                         <ul>
@@ -54,8 +70,9 @@
                             <li><a href="#certificationRequestExpired">certificationRequestExpired</a></li>
                             <li><a href="#certificationRequestRejected">certificationRequestRejected</a></li>
                         </ul>
-                    </div> 
-                </div>    
+                    </ul>
+                    </div>
+                </div>
 	    <div class="section">
                 <h2>Introduction</h2>
                 <div class="subsection">
@@ -252,29 +269,30 @@
             <div class="section">
                 <h2>Events for CodeSignal Test</h2>
  <div class="subsection">
-<h3 id="testworkflow">Test webhooks process flow</h3>
-<img alt="Diagram of webhooks process flow for CodeSignal Test" width="100%" src="https://codesignal.com/wp-content/uploads/2021/03/webhooksproces_test.png" />
+     <h3 id="candidateworkflow">Candidate workflow</h3><br>
+<img alt="Diagram of webhooks triggered on the candidate flow for CodeSignal Test" width="100%" src="../images/candidate-events.png" />
 </div>
                 <div class="subsection">
-                    <h3 id="companyTestSessionCreated">companyTestSessionCreated</h3>
+                    <h4 id="preScreenCandidateDeclined">preScreenCandidateDeclined</h4>
                     <p>
-                        Fired when a test session is created.
+                        Fired when a candidate declines a test session invitation.
                     </p>
                     <div>Request format:</div>
                     <pre><code>{
-  event: 'companyTestSessionCreated',
+  event: 'preScreenCandidateDeclined',
   triggeredOn: number,
   payload: {
     testSessionId: string,
     testId: string,
     testTitle: string,
     candidateEmail: string,
-    candidateName: string
+    candidateName: string,
+    externalId?: string
   }
 };</code></pre>
                     <div>Sample request:</div>
                     <pre><code>{
-  event: 'companyTestSessionCreated',
+  event: 'preScreenCandidateDeclined',
   triggeredOn: 1553720789347,
   payload: {
     testSessionId: 'lehu382hdleh29',
@@ -286,7 +304,40 @@
 };</code></pre>
                 </div>
                 <div class="subsection">
-                    <h3 id="companyTestSessionStarted">companyTestSessionStarted</h3>
+                    <h4 id="preScreenExpired">preScreenExpired</h4>
+                    <p>
+                        Fired when a test session expires.
+                    </p>
+                    <div>Request format:</div>
+                    <pre><code>{
+  event: 'preScreenExpired',
+  triggeredOn: number,
+  payload: {
+    testSessionId: string,
+    testId: string,
+    testTitle: string,
+    candidateEmail: string,
+    candidateName: string,
+    expiredReason: string,
+    externalId?: string
+  }
+};</code></pre>
+                    <div>Sample request:</div>
+                    <pre><code>{
+  event: 'preScreenExpired',
+  triggeredOn: 1553720789347,
+  payload: {
+    testSessionId: 'lehu382hdleh29',
+    testId: 'dhey29hcl28hl28',
+    testTitle: 'Software Engineer intern',
+    candidateEmail: 'john.doe@gmail.com',
+    candidateName: 'John Doe',
+    expiredReason: 'testNotTaken'
+  }
+};</code></pre>
+                </div>
+                <div class="subsection">
+                    <h4 id="companyTestSessionStarted">companyTestSessionStarted</h4>
                     <p>
                         Fired when a candidate starts a test session.
                     </p>
@@ -316,9 +367,48 @@
 };</code></pre>
                 </div>
                 <div class="subsection">
-                    <h3 id="companyTestSessionFinished">companyTestSessionFinished</h3>
+                    <h4 id="preScreenResultVerificationPending">preScreenResultVerificationPending</h4>
                     <p>
-                        Fired when a candidate finishes the test session (including if the session gets force-finished because the time runs out).
+                        Fired when a candidate finished a proctored test session.
+                    </p>
+                    <div>Request format:</div>
+                    <pre><code>{
+  event: 'preScreenResultVerificationPending',
+  triggeredOn: number,
+  payload: {
+    testSessionId: string,
+    testId: string,
+    testTitle: string,
+    candidateEmail: string,
+    candidateName: string,
+    duration: number,
+    score: number,
+    maxScore: number | null | undefined,
+    codingScore?: number | null | undefined,
+    externalId?: string
+  }
+};</code></pre>
+                    <div>Sample request:</div>
+                    <pre><code>{
+  event: 'preScreenResultVerificationPending',
+  triggeredOn: 1553720789347,
+  payload: {
+    testSessionId: 'lehu382hdleh29',
+    testId: 'dhey29hcl28hl28',
+    testTitle: 'Software Engineer intern',
+    candidateEmail: 'john.doe@gmail.com',
+    candidateName: 'John Doe',
+    duration: 3480000, // 58 minutes
+    score: 900,
+    maxScore: 1000,
+    codingScore: 820
+  }
+};</code></pre>
+                </div>
+                <div class="subsection">
+                    <h4 id="companyTestSessionFinished">companyTestSessionFinished</h4>
+                    <p>
+                        Fired when a candidate finishes a non proctored test session (including if the session gets force-finished because the time runs out).
                     </p>
                     <div>Request format:</div>
                     <pre><code>{
@@ -359,7 +449,127 @@
   }
 };</code></pre>
                 </div>
-		<h2>Events for CodeSignal Certify</h2>    
+<div class="subsection">
+   <h3 id="auditorworkflow">CodeSignal Auditor workflow</h3><br>
+       <img alt="Diagram of webhooks triggered on CodeSignal auditor flow" width="100%" src="../images/auditor-events.png" />
+</div>
+
+                <div class="subsection">
+                    <h4 id="preScreenResultNotVerified">preScreenResultNotVerified</h4>
+                    <p>
+                        Fired when an auditor rejects a proctored test session.
+                    </p>
+                    <div>Request format:</div>
+                    <pre><code>{
+  event: 'preScreenResultNotVerified',
+  triggeredOn: number,
+  payload: {
+    testSessionId: string,
+    testId: string,
+    testTitle: string,
+    candidateEmail: string,
+    candidateName: string,
+    rejectedReasons: string[],
+  }
+};</code></pre>
+                    <div>Sample request:</div>
+                    <pre><code>{
+  event: 'preScreenResultNotVerified',
+  triggeredOn: 1553720789347,
+  payload: {
+    testSessionId: 'lehu382hdleh29',
+    testId: 'dhey29hcl28hl28',
+    testTitle: 'Software Engineer intern',
+    candidateEmail: 'john.doe@gmail.com',
+    candidateName: 'John Doe',
+    rejectedReasons: ['Two humans in the room', 'Screen not visible]
+    }
+};</code></pre>
+                    </div>
+
+                <div class="subsection">
+                    <h4 id="preScreenResultVerified">preScreenResultVerified</h4>
+                    <p>
+                        Fired when an auditor verifies a proctored test session.
+                    </p>
+                    <div>Request format:</div>
+                    <pre><code>{
+  event: 'preScreenResultVerified',
+  triggeredOn: number,
+  payload: {
+    testSessionId: string,
+    testId: string,
+    testTitle: string,
+    candidateEmail: string,
+    candidateName: string,
+    duration: number, // milliseconds
+    score: number,
+    maxScore: number,
+    codingScore?: number, // Coding Score in range [300, 850], if configured for this test
+    plagiarismLevel: number,
+    plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-',
+    url: string,
+  }
+};</code></pre>
+                    <div>Sample request:</div>
+                    <pre><code>{
+  event: 'preScreenResultVerified',
+  triggeredOn: 1553720789347,
+  payload: payload: {
+    testSessionId: 'lehu382hdleh29',
+    testId: 'dhey29hcl28hl28',
+    testTitle: 'Software Engineer intern',
+    candidateEmail: 'john.doe@gmail.com',
+    candidateName: 'John Doe',
+    duration: 3480000, // 58 minutes
+    score: 900,
+    maxScore: 1000,
+    codingScore: 820,
+    plagiarismLevel: 0.5,
+    plagiarismLabel: 'medium',
+    url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
+  }
+};</code></pre>
+                </div>
+
+
+<div class="subsection">
+    <h3 id="clientworkflow">Company Client workflow</h3><br>
+    <img alt="Diagram of webhooks triggered on client flow" width="100%" src="../images/client-events.png" />
+</div>
+                <div class="subsection">
+                    <h3 id="companyTestSessionCreated">companyTestSessionCreated</h3>
+                    <p>
+                        Fired when a test session is created.
+                    </p>
+                    <div>Request format:</div>
+                    <pre><code>{
+   event: 'companyTestSessionCreated',
+   triggeredOn: number,
+   payload: {
+     testSessionId: string,
+     testId: string,
+     testTitle: string,
+     candidateEmail: string,
+     candidateName: string
+   }
+ };</code></pre>
+                    <div>Sample request:</div>
+                    <pre><code>{
+   event: 'companyTestSessionCreated',
+   triggeredOn: 1553720789347,
+   payload: {
+     testSessionId: 'lehu382hdleh29',
+     testId: 'dhey29hcl28hl28',
+     testTitle: 'Software Engineer intern',
+     candidateEmail: 'john.doe@gmail.com',
+     candidateName: 'John Doe'
+   }
+ };</code></pre>
+</div>
+
+
+		<h2>Events for CodeSignal Certify</h2>
 <div class="subsection">
 <h3 id="certifyworkflow">Certify webhooks process flow</h3>
 <img alt="Diagram of webhooks process flow for CodeSignal Certify" width="100%" src="https://codesignal.com/wp-content/uploads/2021/03/webhooksprocess_certify.png" />
