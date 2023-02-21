@@ -369,7 +369,7 @@
                 <div class="subsection">
                     <h4 id="preScreenResultVerificationPending">preScreenResultVerificationPending</h4>
                     <p>
-                        Fired when a candidate finished a proctored test session.
+                        Fired when a candidate finishes a proctored test session.
                     </p>
                     <div>Request format:</div>
                     <pre><code>{
@@ -490,7 +490,7 @@
                 <div class="subsection">
                     <h4 id="preScreenResultVerified">preScreenResultVerified</h4>
                     <p>
-                        Fired when an auditor verifies a proctored test session.
+                        Fired when a CodeSignal auditor verifies a proctored test session.
                     </p>
                     <div>Request format:</div>
                     <pre><code>{
@@ -505,7 +505,7 @@
     duration: number, // milliseconds
     score: number,
     maxScore: number,
-    codingScore?: number, // Coding Score in range [300, 850], if configured for this test
+    codingScore?: number, // Coding Score in range [300, 850], if configured for this assessment
     plagiarismLevel: number,
     plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-',
     url: string,
