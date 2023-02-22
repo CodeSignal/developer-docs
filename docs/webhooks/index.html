@@ -38,7 +38,7 @@
                             <li><a href="#retry">Retry policy</a></li>
                             <li><a href="#payloads">Webhook payloads</a></li>
                         </ul>
-                        <li>Events for CodeSignal Test</li>
+                        <li>Events for CodeSignal Pre-Screen</li>
                         <ul>
                             <li><a href="#candidateworkflow">Candidate workflow</a>
                                 <ul>
@@ -61,9 +61,9 @@
                                 </ul>
                             </li>
                         </ul>
-                        <li>Events for CodeSignal Certify</li>
+                        <li>Events for CodeSignal Pre-Screen Certify</li>
                         <ul>
-                            <li><a href="#certifyworkflow">Certify webhooks process flow</a></li>
+                            <li><a href="#certifyworkflow">Pre-Screen Certify webhooks process flow</a></li>
                             <li><a href="#certificationResultPending">certificationResultPending</a></li>
                             <li><a href="#certificationResultPending">certificationResultNotCertified</a></li>
                             <li><a href="#certificationResultShared">certificationResultShared</a></li>
@@ -267,10 +267,10 @@
                 </div>
             </div>
             <div class="section">
-                <h2>Events for CodeSignal Test</h2>
+                <h2>Events for CodeSignal Pre-Screen</h2>
  <div class="subsection">
      <h3 id="candidateworkflow">Candidate workflow</h3><br>
-<img alt="Diagram of webhooks triggered on the candidate flow for CodeSignal Test" width="100%" src="../images/candidate-events.png" />
+<img alt="Diagram of webhooks triggered on the candidate flow for CodeSignal Pre-Screen" width="100%" src="../images/candidate-events.png" />
 </div>
                 <div class="subsection">
                     <h4 id="preScreenCandidateDeclined">preScreenCandidateDeclined</h4>
@@ -298,15 +298,15 @@
     testSessionId: 'lehu382hdleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe'
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe'
   }
 };</code></pre>
                 </div>
                 <div class="subsection">
                     <h4 id="preScreenExpired">preScreenExpired</h4>
                     <p>
-                        Fired when a test session expires.
+                        Fired when a test session invitation expires without the candidate responding.
                     </p>
                     <div>Request format:</div>
                     <pre><code>{
@@ -318,10 +318,16 @@
     testTitle: string,
     candidateEmail: string,
     candidateName: string,
-    expiredReason: string,
+    expiredReason: 'notCertified' | 'testNotTaken', *
     externalId?: string
   }
 };</code></pre>
+                    <div>
+                        <ul>
+                            <li>'testNotTaken' means that the candidate didn't take the test. </li>
+                            <li>notCertified means that the candidate took the test but CodeSignal didn't verify the result in time</li>
+                        </ul>
+                    </div>
                     <div>Sample request:</div>
                     <pre><code>{
   event: 'preScreenExpired',
@@ -330,8 +336,8 @@
     testSessionId: 'lehu382hdleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
     expiredReason: 'testNotTaken'
   }
 };</code></pre>
@@ -361,8 +367,8 @@
     testSessionId: 'lehu382hdleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe'
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe'
   }
 };</code></pre>
                 </div>
@@ -396,8 +402,8 @@
     testSessionId: 'lehu382hdleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
     duration: 3480000, // 58 minutes
     score: 900,
     maxScore: 1000,
@@ -437,8 +443,8 @@
     testSessionId: 'lehu382hdleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
     duration: 3480000, // 58 minutes
     score: 900,
     maxScore: 1000,
@@ -457,7 +463,7 @@
                 <div class="subsection">
                     <h4 id="preScreenResultNotVerified">preScreenResultNotVerified</h4>
                     <p>
-                        Fired when an auditor rejects a proctored test session.
+                        Fired when a test session is marked as not verified by CodeSignal. This means that either the session has been flagged for suspicious behavior, or a technical issue has been identified during the session (in which case the candidate will be automatically granted a retake).
                     </p>
                     <div>Request format:</div>
                     <pre><code>{
@@ -480,9 +486,9 @@
     testSessionId: 'lehu382hdleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
-    rejectedReasons: ['Two humans in the room', 'Screen not visible]
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
+    rejectedReasons: ['Incomplete recording', 'Screen not visible]
     }
 };</code></pre>
                     </div>
@@ -490,7 +496,7 @@
                 <div class="subsection">
                     <h4 id="preScreenResultVerified">preScreenResultVerified</h4>
                     <p>
-                        Fired when a CodeSignal auditor verifies a proctored test session.
+                        Fired when a proctored test session is verified by CodeSignal.
                     </p>
                     <div>Request format:</div>
                     <pre><code>{
@@ -519,8 +525,8 @@
     testSessionId: 'lehu382hdleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
     duration: 3480000, // 58 minutes
     score: 900,
     maxScore: 1000,
@@ -562,17 +568,17 @@
      testSessionId: 'lehu382hdleh29',
      testId: 'dhey29hcl28hl28',
      testTitle: 'Software Engineer intern',
-     candidateEmail: 'john.doe@gmail.com',
-     candidateName: 'John Doe'
+     candidateEmail: 'jane.doe@gmail.com',
+     candidateName: 'Jane Doe'
    }
  };</code></pre>
 </div>
 
 
-		<h2>Events for CodeSignal Certify</h2>
+		<h2>Events for CodeSignal Pre-Screen Certify</h2>
 <div class="subsection">
-<h3 id="certifyworkflow">Certify webhooks process flow</h3>
-<img alt="Diagram of webhooks process flow for CodeSignal Certify" width="100%" src="https://codesignal.com/wp-content/uploads/2021/03/webhooksprocess_certify.png" />
+<h3 id="certifyworkflow">Pre-Screen Certify webhooks process flow</h3>
+<img alt="Diagram of webhooks process flow for CodeSignal Pre-Screen Certify" width="100%" src="https://codesignal.com/wp-content/uploads/2021/03/webhooksprocess_certify.png" />
 </div>
                 <div class="subsection">
                     <h3 id="certificationResultPending">certificationResultPending</h3>
@@ -606,8 +612,8 @@
     testSessionId: '2TgbrRMkBiksAXqEd',
     testId: 'dhey29hcl28hl28',
     testTitle: 'General Coding Assessment',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
     duration: 5286253,
     score: 876,
     maxScore: 1300,
@@ -644,8 +650,8 @@
     certificationRequestId: 'lehjeh36dleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'General Coding Assessment',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
     rejectedReasons: ['Unauthorized resource', 'Presence of others']
   }
 };</code></pre>
@@ -685,8 +691,8 @@
     certificationRequestId: 'lehjeh36dleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'General Coding Assessment',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
     sharedTestSessions: [{
       codingScore: 823,
       score: 1148,
@@ -739,8 +745,8 @@
     certificationRequestId: 'lehjeh36dleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'General Coding Assessment',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
     expiredReason: 'notCertified',
     rejectedReasons: ['Unauthorized resource', 'Presence of others'],
   }
@@ -772,8 +778,8 @@
     certificationRequestId: 'lehjeh36dleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'General Coding Assessment',
-    candidateEmail: 'john.doe@gmail.com',
-    candidateName: 'John Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
   }
 };</code></pre>
                 </div>
