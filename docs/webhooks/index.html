@@ -318,14 +318,13 @@
     testTitle: string,
     candidateEmail: string,
     candidateName: string,
-    expiredReason: 'notCertified' | 'testNotTaken', *
+    expiredReason: 'testNotTaken', *
     externalId?: string
   }
 };</code></pre>
                     <div>
                         <ul>
-                            <li>'testNotTaken' means that the candidate didn't take the test. </li>
-                            <li>notCertified means that the candidate took the test but CodeSignal didn't verify the result in time</li>
+                            <li>'testNotTaken' means that the candidate didn't start the test. </li>
                         </ul>
                     </div>
                     <div>Sample request:</div>
