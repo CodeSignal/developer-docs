@@ -318,15 +318,9 @@
     testTitle: string,
     candidateEmail: string,
     candidateName: string,
-    expiredReason: 'testNotTaken', *
     externalId?: string
   }
 };</code></pre>
-                    <div>
-                        <ul>
-                            <li>'testNotTaken' means that the candidate didn't start the test. </li>
-                        </ul>
-                    </div>
                     <div>Sample request:</div>
                     <pre><code>{
   event: 'preScreenExpired',
@@ -336,8 +330,7 @@
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
     candidateEmail: 'jane.doe@gmail.com',
-    candidateName: 'Jane Doe',
-    expiredReason: 'testNotTaken'
+    candidateName: 'Jane Doe'
   }
 };</code></pre>
                 </div>
