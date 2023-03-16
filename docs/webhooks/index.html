@@ -49,6 +49,7 @@
                     <a href="#candidateworkflow">Candidate workflow</a>
                     <ul>
                       <li><a href="#preScreenCandidateDeclined">preScreenCandidateDeclined</a></li>
+                      <li><a href="#preScreenResultShared">preScreenResultShared</a></li>
                       <li><a href="#preScreenExpired">preScreenExpired</a></li>
                       <li><a href="#companyTestSessionStarted">companyTestSessionStarted</a></li>
                       <li>
@@ -363,6 +364,48 @@
 };</code></pre>
             </div>
             <div class="subsection">
+              <h4 id="preScreenResultShared">preScreenResultShared</h4>
+              <p>
+                Fired when a candidate shares their existing result with a test session invitation.
+              </p>
+              <div>Request format:</div>
+              <pre><code>{
+  event: 'preScreenResultShared',
+  triggeredOn: number,
+  payload: {
+    testSessionId: string,
+    testId: string,
+    testTitle: string,
+    candidateEmail: string,
+    candidateName: string,
+    duration: number,
+    score: number,
+    maxScore: number | null | undefined,
+    codingScore?: number | null | undefined,
+    externalId?: string
+  }
+};</code></pre>
+              <div>Sample request:</div>
+              <pre><code>{
+  event: 'preScreenResultShared',
+  triggeredOn: 1553720789347,
+  payload: {
+    testSessionId: 'lehu382hdleh29',
+    testId: 'dhey29hcl28hl28',
+    testTitle: 'Software Engineer intern',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
+    duration: 3480000, // 58 minutes
+    score: 900,
+    maxScore: 1000,
+    codingScore: 820,
+    plagiarismLevel: 0.5,
+    plagiarismLabel: 'medium',
+    url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
+  }
+};</code></pre>
+            </div>
+            <div class="subsection">
               <h4 id="preScreenExpired">preScreenExpired</h4>
               <p>Fired when a test session invitation expires without the candidate responding.</p>
               <div>Request format:</div>
@@ -472,7 +515,7 @@
     duration: number, // milliseconds
     score: number,
     maxScore: number,
-    codingScore?: number, // Coding Score in range [300, 850], if configured for this test
+    codingScore?: number, // Coding Score in range [300, 850], if configured for this assessment
     plagiarismLevel: number,
     plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-',
     url: string,
@@ -570,7 +613,7 @@
               <pre><code>{
   event: 'preScreenResultVerified',
   triggeredOn: 1553720789347,
-  payload: payload: {
+  payload: {
     testSessionId: 'lehu382hdleh29',
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
