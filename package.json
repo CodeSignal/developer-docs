@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rm -rf docs/graphql/types && graphqldoc --force",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "python -m serve_docs 8000"
+    "start": "python -m serve_docs 8000",
+    "prettify-webhooks": "prettier --write docs/webhooks"
   },
   "repository": {
     "type": "git",
