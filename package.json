@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rm -rf docs/graphql/types && graphqldoc --force",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "python -m serve_docs 8000"
+    "start": "python -m serve_docs 8000",
+    "prettify-webhooks": "prettier --write docs/webhooks"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
     "title": "CodeSignal GraphQL API",
     "favicon": "<link rel=\"icon\" type=\"image/png\" href=\"/images/favicon.png\" sizes=\"32x32\"/>",
     "logo": "<a href=\"https://codesignal.com\" target=\"_blank\" style=\"display:block;\"><img src=\"/images/logo.png\" width=\"200\" /></a>"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4"
   }
 }

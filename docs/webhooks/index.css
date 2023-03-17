@@ -1,93 +1,95 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Work Sans', sans-serif;
-    color: #33485f;
-    font-size: 1em;
-    line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-family: 'Work Sans', sans-serif;
+  color: #33485f;
+  font-size: 1em;
+  line-height: 1.8;
 }
 
-h1, h2, h3 {
-    line-height: 1.25;
-    margin: 0;
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin: 0;
 }
 
 h1 {
-    font-size: 1.75em;
+  font-size: 1.75em;
 }
 
 h2 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 h3 {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
 pre {
-    white-space: pre-wrap;
-    padding: 16px;
-    color: #21cf82;
-    background-color: black;
+  white-space: pre-wrap;
+  padding: 16px;
+  color: #21cf82;
+  background-color: black;
 }
 
 pre > code {
-    font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', monospace;
 }
 
 li:not(:first-child) {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 .mono {
-    font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', monospace;
 }
 
 .page-container {
-    background-color: #002570;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #002570;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-body {
-    max-width: 900px;
-    background-color: #f5f6f7;
+  max-width: 900px;
+  background-color: #f5f6f7;
 }
 
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    padding: 16px 16px 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 16px 16px 32px;
 }
 
 .main-content {
-    padding: 0 48px 16px 48px;
+  padding: 0 48px 16px 48px;
 }
 
 .section {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .section > h2 {
-    padding-bottom: 24px;
+  padding-bottom: 24px;
 }
 
 .subsection {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .footer {
-    margin-bottom: 16px;
-    margin-left: 48px;
+  margin-bottom: 16px;
+  margin-left: 48px;
 }
 
 .doc-link {
-    font-size: 1.3em;
-    display: block;
+  font-size: 1.3em;
+  display: block;
 }
