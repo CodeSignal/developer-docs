@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32"/>
-    <title>CertificationRequests | CodeSignal GraphQL API</title>
+    <title>VerificationStatus | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -241,7 +241,7 @@
                 TestSessionStatus
             </a>
         </li>
-        <li  title="VerificationStatus">
+        <li class="slds-is-active" title="VerificationStatus">
             <a href="verificationstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 VerificationStatus
             </a>
@@ -316,7 +316,7 @@
                 CertificationRequestResult
             </a>
         </li>
-        <li class="slds-is-active" title="CertificationRequests">
+        <li  title="CertificationRequests">
             <a href="certificationrequests.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CertificationRequests
             </a>
@@ -1021,8 +1021,8 @@
         </div>
     </div>
     <div class="container">
-        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">CertificationRequests</h1>
+        <p class="slds-text-title--caps slds-text-color--weak">ENUM</p>
+        <h1 class="slds-text-heading--large">VerificationStatus</h1>
         <div class="slds-text-body--regular"></div>
     </div>
 </section>
@@ -1034,7 +1034,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">CertificationRequests</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Total count of the requests.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">totalCount</span>: <a class="support type" href="int.doc.html">Int</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   A list of certification requests.</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">certificationRequests</span>: [<a class="support type" href="certificationrequest.doc.html">CertificationRequest</a>]! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   Page info of the query. See PageInfo for full description.</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">pageInfo</span>: <a class="support type" href="pageinfo.doc.html">PageInfo</a>! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">enum</span> <span class="identifier">VerificationStatus</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">pending</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">verified</span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">notVerified</span></span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -1045,7 +1045,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="query.doc.html" title="Query - ">Query<em></em></a><li></ul>
+        <ul class="require-by"><li><a href="companytestsession.doc.html" title="CompanyTestSession - A session of a company test.">CompanyTestSession<em>A session of a company test.</em></a><li><li><a href="standardizedtestsession.doc.html" title="StandardizedTestSession - A session of a standardized test.">StandardizedTestSession<em>A session of a standardized test.</em></a><li><li><a href="testsession.doc.html" title="TestSession - A session of a test.">TestSession<em>A session of a test.</em></a><li></ul>
     </div>
 </section>
 <footer>
