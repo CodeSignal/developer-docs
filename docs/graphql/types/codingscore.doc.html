@@ -116,6 +116,11 @@
                 CodingLanguageName
             </a>
         </li>
+        <li  title="CodingScoreVersion">
+            <a href="codingscoreversion.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CodingScoreVersion
+            </a>
+        </li>
         <li  title="CompanyFeatureStatus">
             <a href="companyfeaturestatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CompanyFeatureStatus
@@ -239,6 +244,11 @@
         <li  title="TestSessionStatus">
             <a href="testsessionstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 TestSessionStatus
+            </a>
+        </li>
+        <li  title="VerificationStatus">
+            <a href="verificationstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                VerificationStatus
             </a>
         </li>
         <li  title="__DirectiveLocation">
@@ -681,6 +691,11 @@
                 UserSkill
             </a>
         </li>
+        <li  title="VersionedCodingScore">
+            <a href="versionedcodingscore.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                VersionedCodingScore
+            </a>
+        </li>
         <li  title="__Directive">
             <a href="directive.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 __Directive
@@ -1018,7 +1033,16 @@
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">SCALAR</p>
         <h1 class="slds-text-heading--large">CodingScore</h1>
-        <div class="slds-text-body--regular"><p>A coding score is a number in range [300, 850] used to measure candidate&#39;s coding abilities.</p>
+        <div class="slds-text-body--regular"><p>A coding score is a number:</p>
+<ul>
+<li><p>In range [200, 600] in the 2023 version</p>
+</li>
+<li><p>In range [300, 850] in the original version</p>
+</li>
+<li><p>0 when no submission was made</p>
+</li>
+</ul>
+<p>used to measure the candidate&#39;s coding abilities.</p>
 </div>
     </div>
 </section>
@@ -1041,7 +1065,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="certificationrequestresult.doc.html" title="CertificationRequestResult - ">CertificationRequestResult<em></em></a><li><li><a href="companytestsessionresult.doc.html" title="CompanyTestSessionResult - The result of a completed company test session.">CompanyTestSessionResult<em>The result of a completed company test session.</em></a><li><li><a href="standardizedtestsessionresult.doc.html" title="StandardizedTestSessionResult - The result of a completed standardized test session.">StandardizedTestSessionResult<em>The result of a completed standardized test session.</em></a><li></ul>
+        <ul class="require-by"><li><a href="certificationrequestresult.doc.html" title="CertificationRequestResult - ">CertificationRequestResult<em></em></a><li><li><a href="companytestsessionresult.doc.html" title="CompanyTestSessionResult - The result of a completed company test session.">CompanyTestSessionResult<em>The result of a completed company test session.</em></a><li><li><a href="standardizedtestsessionresult.doc.html" title="StandardizedTestSessionResult - The result of a completed standardized test session.">StandardizedTestSessionResult<em>The result of a completed standardized test session.</em></a><li><li><a href="versionedcodingscore.doc.html" title="VersionedCodingScore - ">VersionedCodingScore<em></em></a><li></ul>
     </div>
 </section>
 <footer>
