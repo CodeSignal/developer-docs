@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32"/>
-    <title>CompanyFeatureStatus | CodeSignal GraphQL API</title>
+    <title>CertifyMigrationStatus | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -106,7 +106,7 @@
                 CertificationStatus
             </a>
         </li>
-        <li  title="CertifyMigrationStatus">
+        <li class="slds-is-active" title="CertifyMigrationStatus">
             <a href="certifymigrationstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CertifyMigrationStatus
             </a>
@@ -126,7 +126,7 @@
                 CodingScoreVersion
             </a>
         </li>
-        <li class="slds-is-active" title="CompanyFeatureStatus">
+        <li  title="CompanyFeatureStatus">
             <a href="companyfeaturestatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CompanyFeatureStatus
             </a>
@@ -1042,8 +1042,9 @@
     </div>
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">ENUM</p>
-        <h1 class="slds-text-heading--large">CompanyFeatureStatus</h1>
-        <div class="slds-text-body--regular"></div>
+        <h1 class="slds-text-heading--large">CertifyMigrationStatus</h1>
+        <div class="slds-text-body--regular"><p>[<em>Internal use only</em>]</p>
+</div>
     </div>
 </section>
 <section>
@@ -1054,7 +1055,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">enum</span> <span class="identifier">CompanyFeatureStatus</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">enabled</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">disabled</span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">enum</span> <span class="identifier">CertifyMigrationStatus</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">migrating</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">finished</span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -1065,7 +1066,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="companyfeature.doc.html" title="CompanyFeature - A feature that can be enabled for a given company.">CompanyFeature<em>A feature that can be enabled for a given company.</em></a><li></ul>
+        <ul class="require-by"><li><a href="company.doc.html" title="Company - A company is an organization of user accounts that have access to the assessment platform.">Company<em>A company is an organization of user accounts that have access to the assessment platform.</em></a><li></ul>
     </div>
 </section>
 <footer>

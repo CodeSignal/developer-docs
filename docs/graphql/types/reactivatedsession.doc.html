@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32"/>
-    <title>CompanyFeatureStatus | CodeSignal GraphQL API</title>
+    <title>ReactivatedSession | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -126,7 +126,7 @@
                 CodingScoreVersion
             </a>
         </li>
-        <li class="slds-is-active" title="CompanyFeatureStatus">
+        <li  title="CompanyFeatureStatus">
             <a href="companyfeaturestatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CompanyFeatureStatus
             </a>
@@ -546,7 +546,7 @@
                 QuizSolution
             </a>
         </li>
-        <li  title="ReactivatedSession">
+        <li class="slds-is-active" title="ReactivatedSession">
             <a href="reactivatedsession.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 ReactivatedSession
             </a>
@@ -1041,8 +1041,8 @@
         </div>
     </div>
     <div class="container">
-        <p class="slds-text-title--caps slds-text-color--weak">ENUM</p>
-        <h1 class="slds-text-heading--large">CompanyFeatureStatus</h1>
+        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
+        <h1 class="slds-text-heading--large">ReactivatedSession</h1>
         <div class="slds-text-body--regular"></div>
     </div>
 </section>
@@ -1054,7 +1054,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">enum</span> <span class="identifier">CompanyFeatureStatus</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">enabled</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">disabled</span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">ReactivatedSession</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">newSessionId</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">reactivationDate</span>: <a class="support type" href="timestamp.doc.html">Timestamp</a>! </span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -1065,7 +1065,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="companyfeature.doc.html" title="CompanyFeature - A feature that can be enabled for a given company.">CompanyFeature<em>A feature that can be enabled for a given company.</em></a><li></ul>
+        <ul class="require-by"><li><a href="companytestsession.doc.html" title="CompanyTestSession - A session of a company test.">CompanyTestSession<em>A session of a company test.</em></a><li></ul>
     </div>
 </section>
 <footer>
