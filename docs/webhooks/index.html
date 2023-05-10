@@ -418,7 +418,7 @@
     duration: number,
     score: number,
     maxScore: number | null | undefined,
-    codingScore?: number, // deprecated; use versionedCodingScore instead
+    codingScore?: number | null, // deprecated; use versionedCodingScore instead
     versionedCodingScore?: {
       version: 'original' | 'codingScore2023',
       value: number,
@@ -523,7 +523,7 @@
     duration: number,
     score: number,
     maxScore: number | null | undefined,
-    codingScore?: number, // deprecated; use versionedCodingScore instead
+    codingScore?: number | null, // deprecated; use versionedCodingScore instead
     versionedCodingScore?: {
       version: 'original' | 'codingScore2023',
       value: number,
@@ -568,7 +568,7 @@
     duration: number, // milliseconds
     score: number,
     maxScore: number,
-    codingScore?: number, // deprecated; use versionedCodingScore instead
+    codingScore?: number | null, // deprecated; use versionedCodingScore instead
     versionedCodingScore?: {
       version: 'original' | 'codingScore2023',
       value: number,
@@ -664,7 +664,7 @@
     duration: number, // milliseconds
     score: number,
     maxScore: number,
-    codingScore?: number, // deprecated; use versionedCodingScore instead
+    codingScore?: number | null, // deprecated; use versionedCodingScore instead
     versionedCodingScore?: {
       version: 'original' | 'codingScore2023',
       value: number,
