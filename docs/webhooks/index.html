@@ -418,7 +418,11 @@
     duration: number,
     score: number,
     maxScore: number | null | undefined,
-    codingScore?: number | null | undefined,
+    codingScore?: number, // deprecated; use versionedCodingScore instead
+    versionedCodingScore?: {
+      version: 'original' | 'codingScore2023',
+      value: number,
+    },
     externalId?: string
   }
 };</code></pre>
@@ -436,6 +440,10 @@
     score: 900,
     maxScore: 1000,
     codingScore: 820,
+    versionedCodingScore: {
+      version: 'codingScore2023',
+      value: 575
+    },
     plagiarismLevel: 0.5,
     plagiarismLabel: 'medium',
     url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
@@ -515,7 +523,11 @@
     duration: number,
     score: number,
     maxScore: number | null | undefined,
-    codingScore?: number | null | undefined,
+    codingScore?: number, // deprecated; use versionedCodingScore instead
+    versionedCodingScore?: {
+      version: 'original' | 'codingScore2023',
+      value: number,
+    },
     externalId?: string
   }
 };</code></pre>
@@ -532,7 +544,11 @@
     duration: 3480000, // 58 minutes
     score: 900,
     maxScore: 1000,
-    codingScore: 820
+    codingScore: 820,
+    versionedCodingScore: {
+      version: 'codingScore2023',
+      value: 575
+    },
   }
 };</code></pre>
             </div>
@@ -552,7 +568,11 @@
     duration: number, // milliseconds
     score: number,
     maxScore: number,
-    codingScore?: number, // Coding Score in range [300, 850], if configured for this assessment
+    codingScore?: number, // deprecated; use versionedCodingScore instead
+    versionedCodingScore?: {
+      version: 'original' | 'codingScore2023',
+      value: number,
+    },
     plagiarismLevel: number,
     plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-',
     url: string,
@@ -572,6 +592,10 @@
     score: 900,
     maxScore: 1000,
     codingScore: 820,
+    versionedCodingScore: {
+      version: 'codingScore2023',
+      value: 575
+    },
     plagiarismLevel: 0.5,
     plagiarismLabel: 'medium',
     url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
@@ -640,7 +664,11 @@
     duration: number, // milliseconds
     score: number,
     maxScore: number,
-    codingScore?: number, // Coding Score in range [300, 850], if configured for this assessment
+    codingScore?: number, // deprecated; use versionedCodingScore instead
+    versionedCodingScore?: {
+      version: 'original' | 'codingScore2023',
+      value: number,
+    },
     plagiarismLevel: number,
     plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-',
     url: string,
@@ -660,6 +688,10 @@
     score: 900,
     maxScore: 1000,
     codingScore: 820,
+    versionedCodingScore: {
+      version: 'codingScore2023',
+      value: 575
+    },
     plagiarismLevel: 0.5,
     plagiarismLabel: 'medium',
     url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
