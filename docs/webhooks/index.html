@@ -46,6 +46,12 @@
                 <li>Events for CodeSignal Pre-Screen</li>
                 <ul>
                   <li>
+                    <a href="#clientworkflow">Company Client workflow</a>
+                    <ul>
+                      <li><a href="#companyTestSessionCreated">companyTestSessionCreated</a></li>
+                    </ul>
+                  </li>
+                  <li>
                     <a href="#candidateworkflow">Candidate workflow</a>
                     <ul>
                       <li><a href="#preScreenCandidateDeclined">preScreenCandidateDeclined</a></li>
@@ -65,12 +71,6 @@
                     <ul>
                       <li><a href="#preScreenResultNotVerified">preScreenResultNotVerified</a></li>
                       <li><a href="#preScreenResultVerified">preScreenResultVerified</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#clientworkflow">Company Client workflow</a>
-                    <ul>
-                      <li><a href="#companyTestSessionCreated">companyTestSessionCreated</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -325,6 +325,43 @@
           </div>
           <div class="section">
             <h2>Events for CodeSignal Pre-Screen</h2>
+            <div class="subsection">
+              <h3 id="clientworkflow">Company Client workflow</h3>
+              <br />
+              <img
+                alt="Diagram of webhooks triggered on client flow"
+                width="100%"
+                src="../images/client-events.png"
+              />
+            </div>
+            <div class="subsection">
+              <h3 id="companyTestSessionCreated">companyTestSessionCreated</h3>
+              <p>Fired when a test session is created.</p>
+              <div>Request format:</div>
+              <pre><code>{
+   event: 'companyTestSessionCreated',
+   triggeredOn: number,
+   payload: {
+     testSessionId: string,
+     testId: string,
+     testTitle: string,
+     candidateEmail: string,
+     candidateName: string
+   }
+ };</code></pre>
+              <div>Sample request:</div>
+              <pre><code>{
+   event: 'companyTestSessionCreated',
+   triggeredOn: 1553720789347,
+   payload: {
+     testSessionId: 'lehu382hdleh29',
+     testId: 'dhey29hcl28hl28',
+     testTitle: 'Software Engineer intern',
+     candidateEmail: 'jane.doe@gmail.com',
+     candidateName: 'Jane Doe'
+   }
+ };</code></pre>
+            </div>
             <div class="subsection">
               <h3 id="candidateworkflow">Candidate workflow</h3>
               <br />
@@ -629,45 +666,6 @@
   }
 };</code></pre>
             </div>
-
-            <div class="subsection">
-              <h3 id="clientworkflow">Company Client workflow</h3>
-              <br />
-              <img
-                alt="Diagram of webhooks triggered on client flow"
-                width="100%"
-                src="../images/client-events.png"
-              />
-            </div>
-            <div class="subsection">
-              <h3 id="companyTestSessionCreated">companyTestSessionCreated</h3>
-              <p>Fired when a test session is created.</p>
-              <div>Request format:</div>
-              <pre><code>{
-   event: 'companyTestSessionCreated',
-   triggeredOn: number,
-   payload: {
-     testSessionId: string,
-     testId: string,
-     testTitle: string,
-     candidateEmail: string,
-     candidateName: string
-   }
- };</code></pre>
-              <div>Sample request:</div>
-              <pre><code>{
-   event: 'companyTestSessionCreated',
-   triggeredOn: 1553720789347,
-   payload: {
-     testSessionId: 'lehu382hdleh29',
-     testId: 'dhey29hcl28hl28',
-     testTitle: 'Software Engineer intern',
-     candidateEmail: 'jane.doe@gmail.com',
-     candidateName: 'Jane Doe'
-   }
- };</code></pre>
-            </div>
-
             <h2>Events for CodeSignal Pre-Screen Certify</h2>
             <div class="subsection">
               <h3 id="certifyworkflow">Pre-Screen Certify webhooks process flow</h3>
