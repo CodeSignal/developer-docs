@@ -326,7 +326,9 @@
           <div class="section">
             <h2>Events for CodeSignal Pre-Screen</h2>
             <div class="subsection">
-              <p id="clientworkflow">Here is an overview of the end to end workflow of events for CodeSignal Pre-Screen.</p>
+              <p id="clientworkflow">
+                Here is an overview of the end to end workflow of events for CodeSignal Pre-Screen.
+              </p>
               <br />
               <img
                 alt="Diagram of webhooks end to end flow"
@@ -427,6 +429,9 @@
     duration: number,
     score: number,
     maxScore: number | null | undefined,
+    plagiarismLevel: number,
+    plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-',
+    url: string,
     codingScore?: number | null, // deprecated; use versionedCodingScore instead
     versionedCodingScore?: {
       version: 'original' | 'codingScore2023',
