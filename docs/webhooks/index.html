@@ -466,7 +466,13 @@
             </div>
             <div class="subsection">
               <h4 id="preScreenExpired">preScreenExpired</h4>
-              <p>Fired when a test session invitation expires without the candidate responding.</p>
+              <p>
+                Fired when a test session invitation cannot be fulfilled within the
+                expiration window. The <strong>expiredReason</strong> field indicates whether the
+                expiration is due to the test not being taken at all, or whether the test could not
+                be certified by CodeSignal due to possibility/suspicion of cheating. If the latter,
+                a <strong>rejectedReasons</strong> field will also be provided.
+              </p>
               <div>Request format:</div>
               <pre><code>{
   event: 'preScreenExpired',
@@ -477,7 +483,9 @@
     testTitle: string,
     candidateEmail: string,
     candidateName: string,
-    externalId?: string
+    externalId?: string,
+    expiredReason: 'testNotTaken' | 'notCertified',
+    rejectedReasons?: Array&lt;string&gt;,
   }
 };</code></pre>
               <div>Sample request:</div>
@@ -489,7 +497,9 @@
     testId: 'dhey29hcl28hl28',
     testTitle: 'Software Engineer intern',
     candidateEmail: 'jane.doe@gmail.com',
-    candidateName: 'Jane Doe'
+    candidateName: 'Jane Doe',
+    expiredReason: 'notCertified',
+    rejectedReasons: ['Unauthorized resource', 'Presence of others'],
   }
 };</code></pre>
             </div>
@@ -644,7 +654,7 @@
     testTitle: string,
     candidateEmail: string,
     candidateName: string,
-    rejectedReasons: string[],
+    rejectedReasons?: Array&lt;string&gt;,
   }
 };</code></pre>
               <div>Sample request:</div>
@@ -657,7 +667,7 @@
     testTitle: 'Software Engineer intern',
     candidateEmail: 'jane.doe@gmail.com',
     candidateName: 'Jane Doe',
-    rejectedReasons: ['Incomplete recording', 'Screen not visible]
+    rejectedReasons: ['Incomplete recording', 'Screen not visible],
     }
 };</code></pre>
             </div>
@@ -783,7 +793,7 @@
     testTitle: string,
     candidateEmail: string,
     candidateName: string,
-    rejectedReasons: Array&lt;string&gt;
+    rejectedReasons: Array&lt;string&gt;,
   }
 };</code></pre>
               <div>Sample request:</div>
@@ -796,7 +806,7 @@
     testTitle: 'General Coding Assessment',
     candidateEmail: 'jane.doe@gmail.com',
     candidateName: 'Jane Doe',
-    rejectedReasons: ['Unauthorized resource', 'Presence of others']
+    rejectedReasons: ['Unauthorized resource', 'Presence of others'],
   }
 };</code></pre>
             </div>
@@ -881,7 +891,7 @@
     candidateEmail: string,
     candidateName: string,
     expiredReason: 'testNotTaken' | 'notCertified',
-    rejectedReasons?: Array&lt;string&gt;
+    rejectedReasons?: Array&lt;string&gt;,
   }
 };</code></pre>
               <div>Sample request:</div>
