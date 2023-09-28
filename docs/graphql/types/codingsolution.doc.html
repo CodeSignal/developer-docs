@@ -181,6 +181,11 @@
                 GeneralType
             </a>
         </li>
+        <li  title="IntegrityReportStatus">
+            <a href="integrityreportstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                IntegrityReportStatus
+            </a>
+        </li>
         <li  title="InterviewerFeedbackOverallEvaluation">
             <a href="interviewerfeedbackoverallevaluation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 InterviewerFeedbackOverallEvaluation
@@ -221,9 +226,19 @@
                 SkillType
             </a>
         </li>
+        <li  title="SolutionSimilarityScore">
+            <a href="solutionsimilarityscore.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SolutionSimilarityScore
+            </a>
+        </li>
         <li  title="StandardizedTestType">
             <a href="standardizedtesttype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 StandardizedTestType
+            </a>
+        </li>
+        <li  title="SuspicionScore">
+            <a href="suspicionscore.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SuspicionScore
             </a>
         </li>
         <li  title="TaskDiffAction">
@@ -486,6 +501,11 @@
                 Integrations
             </a>
         </li>
+        <li  title="IntegrityReport">
+            <a href="integrityreport.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                IntegrityReport
+            </a>
+        </li>
         <li  title="InterviewerFeedback">
             <a href="interviewerfeedback.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 InterviewerFeedback
@@ -596,6 +616,11 @@
                 SkillAreaTask
             </a>
         </li>
+        <li  title="SolutionSimilarity">
+            <a href="solutionsimilarity.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SolutionSimilarity
+            </a>
+        </li>
         <li  title="SolutionSource">
             <a href="solutionsource.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 SolutionSource
@@ -614,6 +639,11 @@
         <li  title="StandardizedTestSessionResult">
             <a href="standardizedtestsessionresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 StandardizedTestSessionResult
+            </a>
+        </li>
+        <li  title="SuspiciousActivity">
+            <a href="suspiciousactivity.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SuspiciousActivity
             </a>
         </li>
         <li  title="TaskCustomScore">
@@ -1065,7 +1095,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">CodingSolution</span> <span class="keyword operator ts">implements</span> <a class="support type" href="tasksolution.doc.html">TaskSolution</a> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">plagiarismLabel</span>: <a class="support type" href="plagiarismlabel.doc.html">PlagiarismLabel</a> </span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="comment line">#   Files submitted as a solution.</span></span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   - Cost complexity: 2</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">sources</span>: [<a class="support type" href="solutionsource.doc.html">SolutionSource</a>]! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   A standalone URL to the solution.</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"><span class="tab"><span class="comment line">#   - Cost complexity: 1</span></span></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="meta">url</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">CodingSolution</span> <span class="keyword operator ts">implements</span> <a class="support type" href="tasksolution.doc.html">TaskSolution</a> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">plagiarismLabel</span>: <a class="support type" href="plagiarismlabel.doc.html">PlagiarismLabel</a> <span class="keyword operator ts">@deprecated</span>( reason: <span class="string">"Use integrityReport.solutionSimilarity.score on TestSessionTaskResult instead" </span> )</span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="comment line">#   Files submitted as a solution.</span></span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   - Cost complexity: 2</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">sources</span>: [<a class="support type" href="solutionsource.doc.html">SolutionSource</a>]! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   A standalone URL to the solution.</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"><span class="tab"><span class="comment line">#   - Cost complexity: 1</span></span></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="meta">url</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
