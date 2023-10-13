@@ -82,6 +82,7 @@
                   <li><a href="#certificationResultShared">certificationResultShared</a></li>
                   <li><a href="#certificationRequestExpired">certificationRequestExpired</a></li>
                   <li><a href="#certificationRequestRejected">certificationRequestRejected</a></li>
+                  <li><a href="#certificationRequestsMerged">certificationRequestsMerged</a></li>
                 </ul>
               </ul>
             </div>
@@ -467,11 +468,11 @@
             <div class="subsection">
               <h4 id="preScreenExpired">preScreenExpired</h4>
               <p>
-                Fired when a test session invitation cannot be fulfilled within the
-                expiration window. The <strong>expiredReason</strong> field indicates whether the
-                expiration is due to the test not being taken at all, or whether the test could not
-                be certified by CodeSignal due to possibility/suspicion of cheating. If the latter,
-                a <strong>rejectedReasons</strong> field will also be provided.
+                Fired when a test session invitation cannot be fulfilled within the expiration
+                window. The <strong>expiredReason</strong> field indicates whether the expiration is
+                due to the test not being taken at all, or whether the test could not be certified
+                by CodeSignal due to possibility/suspicion of cheating. If the latter, a
+                <strong>rejectedReasons</strong> field will also be provided.
               </p>
               <div>Request format:</div>
               <pre><code>{
@@ -938,6 +939,33 @@
     testTitle: 'General Coding Assessment',
     candidateEmail: 'jane.doe@gmail.com',
     candidateName: 'Jane Doe',
+  }
+};</code></pre>
+            </div>
+            <div class="subsection">
+              <h3 id="certificationRequestsMerged">certificationRequestsMerged</h3>
+              <p>
+                This event is fired in case two Certification Requests get merged together. This can
+                happen if a candidate gets invited to take the same assessment using different email
+                addresses. In this case the newer request will be deleted, and its data will be
+                transferred to the older one.
+              </p>
+              <div>Request format:</div>
+              <pre><code>{
+  event: 'certificationRequestsMerged',
+  triggeredOn: number,
+  payload: {
+    deletedRequestId: string,
+    mergedRequestId: string,
+  }
+};</code></pre>
+              <div>Sample request:</div>
+              <pre><code>{
+  event: 'certificationRequestRejected',
+  triggeredOn: 1553720789347,
+  payload: {
+    deletedRequestId: 'lehjeh36dleh29',
+    mergedRequestId: 'dhey29hcl28hl28',
   }
 };</code></pre>
             </div>
