@@ -366,6 +366,11 @@
                 CodeChange
             </a>
         </li>
+        <li  title="CodeReviewEnvironment">
+            <a href="codereviewenvironment.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CodeReviewEnvironment
+            </a>
+        </li>
         <li  title="CodeReviewTask">
             <a href="codereviewtask.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CodeReviewTask
@@ -489,11 +494,6 @@
         <li  title="FeedbackSettings">
             <a href="feedbacksettings.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 FeedbackSettings
-            </a>
-        </li>
-        <li  title="FilesystemEnvironment">
-            <a href="filesystemenvironment.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                FilesystemEnvironment
             </a>
         </li>
         <li  title="FilesystemFile">
@@ -831,6 +831,11 @@
                 CodeChangeInput
             </a>
         </li>
+        <li  title="CodeReviewEnvironmentInput">
+            <a href="codereviewenvironmentinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CodeReviewEnvironmentInput
+            </a>
+        </li>
         <li  title="CodingScoreConfigurationInput">
             <a href="codingscoreconfigurationinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CodingScoreConfigurationInput
@@ -996,11 +1001,6 @@
                 FeedbackSettingsInput
             </a>
         </li>
-        <li  title="FilesystemEnvironmentInput">
-            <a href="filesystemenvironmentinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                FilesystemEnvironmentInput
-            </a>
-        </li>
         <li  title="FilesystemFileInput">
             <a href="filesystemfileinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 FilesystemFileInput
@@ -1149,7 +1149,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">input</span> <span class="identifier">CreateCodeReviewTaskInput</span> {</td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"><span class="comment line">#   Unique question name.</span></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Has to be a valid identifier - should start with a letter and should not contain </span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="comment line">#   spaces.</span></span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="comment line">#   The title of the question is the more user-friendly version of the question </span></span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line">#   name.</span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"><span class="tab"><span class="comment line">#   The question execution environments.</span></span></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="meta">executionEnvironments</span>: [<a class="support type" href="filesystemenvironmentinput.doc.html">FilesystemEnvironmentInput</a>!]!</span></td></tr></span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">input</span> <span class="identifier">CreateCodeReviewTaskInput</span> {</td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"><span class="comment line">#   Unique question name.</span></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Has to be a valid identifier - should start with a letter and should not contain </span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="comment line">#   spaces.</span></span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="comment line">#   The title of the question is the more user-friendly version of the question </span></span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line">#   name.</span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"><span class="tab"><span class="comment line">#   The question execution environments.</span></span></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="meta">executionEnvironments</span>: [<a class="support type" href="codereviewenvironmentinput.doc.html">CodeReviewEnvironmentInput</a>!]!</span></td></tr></span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
