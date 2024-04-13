@@ -30,11 +30,10 @@ GraphQL API docs are generated with graphqldoc:
 https://github.com/codesignal/graphqldoc
 
 To generate documentation:
-- Check out the main repository containing the GraphQL server.
-- Run it the usual way so that GraphQL is accessible here: http://localhost:3000/graphql
+- The default endpoint is set to [http://app.codesignal.com/graphql](https://app.codesignal.com/graphql), so ensure that latest version is deployed already.
 - Check out this repository and run `npm install`, then `npm run build`.
 - Static pages will be generated under `/docs/graphql/types`.
- - Make sure they look okay, then commit and push.
+- Make sure they look okay, then commit and push.
  
 ## How to publish updated docs
 This repo is hosted with GitHub Pages, so any change under `/docs` on the `master` branch will be published here:
