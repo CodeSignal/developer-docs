@@ -84,6 +84,11 @@
                   <li><a href="#certificationRequestRejected">certificationRequestRejected</a></li>
                   <li><a href="#certificationRequestsMerged">certificationRequestsMerged</a></li>
                 </ul>
+                <li>Events for CodeSignal Live Interview</li>
+                <ul>
+                  <li><a href="#liveinterviewworkflow">Live Interview webhooks process flow</a></li>
+                  <li><a href="#liveInterviewFinished">liveInterviewFinished</a></li>
+                </ul>
               </ul>
             </div>
           </div>
@@ -966,6 +971,51 @@
   payload: {
     deletedRequestId: 'lehjeh36dleh29',
     mergedRequestId: 'dhey29hcl28hl28',
+  }
+};</code></pre>
+            </div>
+            <h2>Events for CodeSignal Live Interview</h2>
+            <div class="subsection">
+              <h3 id="liveinterviewworkflow">Live Interview webhooks process flow</h3>
+              <img
+                alt="Diagram of webhooks process flow for CodeSignal Live Interview"
+                width="100%"
+                src="../images/live-interview-events.svg"
+              />
+            </div>
+            <div class="subsection">
+              <h3 id="liveInterviewFinished">liveInterviewFinished</h3>
+              <p>
+                Fired when a interviewer finishes a live interview or when a live interview timeout
+              </p>
+              <div>Request format:</div>
+              <pre><code>{
+  event: 'liveInterviewFinished',
+  triggeredOn: number,
+  payload: {
+    interviewId: LiveInterviewId;
+    candidateName: Maybe<string>;
+    candidateEmail: Maybe<string>;
+    startDate: Maybe<number>;
+    endDate: Maybe<number>;
+    questionsSolved: number;
+    questionsAttempted: number;
+    url: string;
+  }
+};</code></pre>
+              <div>Sample request:</div>
+              <pre><code>{
+  event: 'liveInterviewFinished',
+  triggeredOn: 1553720789347,
+  payload: {
+    interviewId: 'zWve8sgiLJit6isiM',
+    candidateName: 'Jane Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    startDate: 1727896812565,
+    endDate: 1727896849868,
+    questionsSolved: 1,
+    questionsAttempted: 2,
+    url: https://app.codesignal.com/client-dashboard/interviews?status=over&liveInterviewId=zWve8sgiLJit6isiM
   }
 };</code></pre>
             </div>
