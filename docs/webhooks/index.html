@@ -986,21 +986,21 @@
             <div class="subsection">
               <h3 id="liveInterviewFinished">liveInterviewFinished</h3>
               <p>
-                Fired when a interviewer finishes a live interview or when a live interview timeout
+                Fired when a interviewer finishes a live interview or when a live interview times out
               </p>
               <div>Request format:</div>
               <pre><code>{
   event: 'liveInterviewFinished',
   triggeredOn: number,
   payload: {
-    interviewId: LiveInterviewId;
-    candidateName: Maybe<string>;
-    candidateEmail: Maybe<string>;
-    startDate: Maybe<number>;
-    endDate: Maybe<number>;
-    questionsSolved: number;
-    questionsAttempted: number;
-    url: string;
+    interviewId: string,
+    candidateName: string,
+    candidateEmail: string,
+    startDate: number,
+    endDate: number,
+    questionsSolved: number,
+    questionsAttempted: number,
+    url: string,
   }
 };</code></pre>
               <div>Sample request:</div>
