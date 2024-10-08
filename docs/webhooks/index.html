@@ -64,6 +64,7 @@
                         >
                       </li>
                       <li><a href="#companyTestSessionFinished">companyTestSessionFinished</a></li>
+                      <li><a href="#preScreenIntegrityReviewUpdated">preScreenIntegrityReviewUpdated</a></li>
                     </ul>
                   </li>
                   <li>
@@ -624,6 +625,36 @@
     plagiarismLevel: 0.5,
     plagiarismLabel: 'medium',
     url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
+  }
+};</code></pre>
+            </div>
+            <div class="subsection">
+              <h4 id="preScreenIntegrityReviewUpdated">preScreenIntegrityReviewUpdated</h4>
+              <p>Fired when a non-proctored test session's integrity review status is updated.</p>
+              <div>Request format:</div>
+              <pre><code>{
+  event: 'preScreenIntegrityReviewUpdated',
+  triggeredOn: number,
+  payload: {
+    testSessionId: string,
+    testId: string,
+    testTitle: string,
+    candidateEmail: string,
+    candidateName: string,
+    integrityReviewSuggested: boolean,
+  }
+};</code></pre>
+              <div>Sample request:</div>
+              <pre><code>{
+  event: 'preScreenIntegrityReviewUpdated',
+  triggeredOn: 1553720789347,
+  payload: {
+    testSessionId: 'lehu382hdleh29',
+    testId: 'dhey29hcl28hl28',
+    testTitle: 'Software Engineer intern',
+    candidateEmail: 'jane.doe@gmail.com',
+    candidateName: 'Jane Doe',
+    integrityReviewSuggested: true
   }
 };</code></pre>
             </div>
