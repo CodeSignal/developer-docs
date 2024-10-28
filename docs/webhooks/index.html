@@ -85,6 +85,12 @@
                   <li><a href="#certificationRequestRejected">certificationRequestRejected</a></li>
                   <li><a href="#certificationRequestsMerged">certificationRequestsMerged</a></li>
                 </ul>
+                <li>Events for CodeSignal Live Interview</li>
+                <ul>
+                  <li><a href="#liveinterviewworkflow">Live Interview webhooks process flow</a></li>
+                  <li><a href="#liveInterviewFinished">liveInterviewFinished</a></li>
+                  <li><a href="#liveInterviewFeedbackUpdated">liveInterviewFeedbackUpdated</a></li>
+                </ul>
               </ul>
             </div>
           </div>
@@ -997,6 +1003,119 @@
   payload: {
     deletedRequestId: 'lehjeh36dleh29',
     mergedRequestId: 'dhey29hcl28hl28',
+  }
+};</code></pre>
+            </div>
+            <h2>Events for CodeSignal Live Interview</h2>
+            <div class="subsection">
+              <h3 id="liveinterviewworkflow">Live Interview webhooks process flow</h3>
+              <img
+                alt="Diagram of webhooks process flow for CodeSignal Live Interview"
+                width="100%"
+                src="../images/live-interview-events.svg"
+              />
+            </div>
+            <div class="subsection">
+              <h3 id="liveInterviewFinished">liveInterviewFinished</h3>
+              <p>
+                Fired when an interviewer finishes a live interview or when a live interview times out.
+              </p>
+              <div>Request format:</div>
+              <pre><code>{
+  event: 'liveInterviewFinished',
+  triggeredOn: number,
+  payload: {
+    interviewId: string,
+    candidateName: string,
+    candidateEmail: string,
+    startDate: number,
+    endDate: number,
+    questionsSolved: number,
+    questionsAttempted: number,
+    url: string,
+  }
+};</code></pre>
+              <div>Sample request:</div>
+              <pre><code>{
+  event: 'liveInterviewFinished',
+  triggeredOn: 1553720789347,
+  payload: {
+    interviewId: 'zWve8sgiLJit6isiM',
+    candidateName: 'Jane Doe',
+    candidateEmail: 'jane.doe@gmail.com',
+    startDate: 1727896812565,
+    endDate: 1727896849868,
+    questionsSolved: 1,
+    questionsAttempted: 2,
+    url: https://app.codesignal.com/client-dashboard/interviews?status=over&liveInterviewId=zWve8sgiLJit6isiM
+  }
+};</code></pre>
+            </div>
+            <div class="subsection">
+              <h3 id="liveInterviewFeedbackUpdated">liveInterviewFeedbackUpdated</h3>
+              <p>
+                Fired when an interviewer adds or updates interview feedback.
+              </p>
+              <div>Request format:</div>
+              <pre><code>{
+  event: 'liveInterviewFeedbackUpdated',
+  triggeredOn: number,
+  payload: {
+    interviewId: string,
+    interviewerId: string,
+    feedback: {
+      generalNotes: string,
+      categories?: Array<{
+        name: string,
+        attributes: Array<{
+          name: string,
+          score?: number,
+          notes?: string,
+        }>,
+      }>,
+      recommendedLevel?: string,
+      overallEvaluation?: string,
+    }
+  }
+};</code></pre>
+              <div>Sample request:</div>
+              <pre><code>{
+  event: 'liveInterviewFeedbackUpdated',
+  triggeredOn: 1553720789347,
+  payload: {
+    interviewId: 'zWve8sgiLJit6isiM',
+    interviewerId: 'qcmbuCuxpHELGYEJw',
+    feedback: {
+      generalNotes: 'Great candidate, very knowledgeable',
+      categories: [
+        {
+          name: 'Problem Solving',
+          attributes: [
+            {
+              name: 'Problem Solving',
+              score: 4,
+              notes: 'Great problem solving skills',
+            },
+            {
+              name: 'Code Quality',
+              score: 3,
+            },
+          ],
+        },
+        {
+          name: 'Communication',
+          attributes: [
+            {
+              name: 'Communication',
+              score: 5,
+              notes: 'Excellent communication skills',
+            },
+          ],
+        },
+      ],
+      recommendedLevel: 'Senior',
+      overallEvaluation: 'Strong Yes',
+    }
   }
 };</code></pre>
             </div>
