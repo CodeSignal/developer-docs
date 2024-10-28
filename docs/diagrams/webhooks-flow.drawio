@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.7.17">
   <diagram name="Page-1" id="j61EQ_yQ_Mo7Y-l2gbru">
-    <mxGraphModel dx="1434" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1366" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -183,22 +183,49 @@
         <mxCell id="1_Vyh3dZbqvXK6EHyWsz-6" value="preScreenResultShared" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="551" y="235.5" width="220" height="39" as="geometry" />
         </mxCell>
-        <mxCell id="f6R_C4WLF5Ge0BzN9inh-1" value="Live Interview Flow" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="170" y="1510" width="560" height="150" as="geometry">
+        <mxCell id="f6R_C4WLF5Ge0BzN9inh-1" value="Live Interview Flow" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="1510" width="640" height="410" as="geometry">
             <mxRectangle x="70" y="1260" width="40" height="110" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="f6R_C4WLF5Ge0BzN9inh-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="f6R_C4WLF5Ge0BzN9inh-1" source="f6R_C4WLF5Ge0BzN9inh-4" target="f6R_C4WLF5Ge0BzN9inh-3">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="335" y="69.94117647058829" as="targetPoint" />
-            <mxPoint x="5" y="70" as="sourcePoint" />
-          </mxGeometry>
+        <mxCell id="f6R_C4WLF5Ge0BzN9inh-3" value="liveInterviewFinished" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="f6R_C4WLF5Ge0BzN9inh-1" vertex="1">
+          <mxGeometry x="46" y="340" width="180" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f6R_C4WLF5Ge0BzN9inh-3" value="liveInterviewFinished" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="f6R_C4WLF5Ge0BzN9inh-1">
-          <mxGeometry x="345" y="50" width="180" height="40" as="geometry" />
+        <mxCell id="48Xi0esR3YfY3yJarmiS-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f6R_C4WLF5Ge0BzN9inh-1" source="f6R_C4WLF5Ge0BzN9inh-4" target="48Xi0esR3YfY3yJarmiS-1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="f6R_C4WLF5Ge0BzN9inh-4" value="An interview session is finished" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="f6R_C4WLF5Ge0BzN9inh-1">
+        <mxCell id="48Xi0esR3YfY3yJarmiS-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f6R_C4WLF5Ge0BzN9inh-1" source="f6R_C4WLF5Ge0BzN9inh-4" target="48Xi0esR3YfY3yJarmiS-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f6R_C4WLF5Ge0BzN9inh-4" value="Interview created" style="rounded=0;whiteSpace=wrap;html=1;" parent="f6R_C4WLF5Ge0BzN9inh-1" vertex="1">
           <mxGeometry x="50" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8NS8VvSezeq-eWyjPmP8-1" value="liveInterviewFeedbackUpdated" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="f6R_C4WLF5Ge0BzN9inh-1" vertex="1">
+          <mxGeometry x="434" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="48Xi0esR3YfY3yJarmiS-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f6R_C4WLF5Ge0BzN9inh-1" source="48Xi0esR3YfY3yJarmiS-1" target="48Xi0esR3YfY3yJarmiS-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48Xi0esR3YfY3yJarmiS-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f6R_C4WLF5Ge0BzN9inh-1" source="48Xi0esR3YfY3yJarmiS-1" target="48Xi0esR3YfY3yJarmiS-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48Xi0esR3YfY3yJarmiS-1" value="Interview started" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="f6R_C4WLF5Ge0BzN9inh-1">
+          <mxGeometry x="50" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="48Xi0esR3YfY3yJarmiS-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f6R_C4WLF5Ge0BzN9inh-1" source="48Xi0esR3YfY3yJarmiS-2" target="f6R_C4WLF5Ge0BzN9inh-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48Xi0esR3YfY3yJarmiS-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="f6R_C4WLF5Ge0BzN9inh-1" source="48Xi0esR3YfY3yJarmiS-2" target="48Xi0esR3YfY3yJarmiS-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48Xi0esR3YfY3yJarmiS-2" value="Interview finished" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="f6R_C4WLF5Ge0BzN9inh-1">
+          <mxGeometry x="50" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="48Xi0esR3YfY3yJarmiS-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f6R_C4WLF5Ge0BzN9inh-1" source="48Xi0esR3YfY3yJarmiS-6" target="8NS8VvSezeq-eWyjPmP8-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48Xi0esR3YfY3yJarmiS-6" value="Interview feedback created/updated&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="f6R_C4WLF5Ge0BzN9inh-1">
+          <mxGeometry x="242" y="130" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
