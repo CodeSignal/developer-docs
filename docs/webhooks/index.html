@@ -64,7 +64,11 @@
                         >
                       </li>
                       <li><a href="#companyTestSessionFinished">companyTestSessionFinished</a></li>
-                      <li><a href="#preScreenIntegrityReviewUpdated">preScreenIntegrityReviewUpdated</a></li>
+                      <li>
+                        <a href="#preScreenIntegrityReviewUpdated"
+                          >preScreenIntegrityReviewUpdated</a
+                        >
+                      </li>
                     </ul>
                   </li>
                   <li>
@@ -298,10 +302,11 @@
                 </tbody>
               </table>
               <p>
-                CodeSignal will also send an email notification to the owner emails associated with
-                the webhook, if any. To make sure we don't spam you, CodeSignal will send at most
-                one email a day for every webhook. This means that you will generally be notified
-                about the first fail, the 14th fail, and every fail starting from the 16th.
+                After the first few retries CodeSignal will also send an email notification to the
+                owner emails associated with the webhook, if any. To make sure we don't spam you,
+                CodeSignal will send at most one email a day for every webhook. This means that you
+                will generally be notified about the 5th fail, the 14th fail, and every fail
+                starting from the 16th.
               </p>
               <p>
                 When a webhook is unhealthy, events will be queued in the order they were triggered,
@@ -1018,7 +1023,8 @@
             <div class="subsection">
               <h3 id="liveInterviewFinished">liveInterviewFinished</h3>
               <p>
-                Fired when an interviewer finishes a live interview or when a live interview times out.
+                Fired when an interviewer finishes a live interview or when a live interview times
+                out.
               </p>
               <div>Request format:</div>
               <pre><code>{
@@ -1053,9 +1059,7 @@
             </div>
             <div class="subsection">
               <h3 id="liveInterviewFeedbackUpdated">liveInterviewFeedbackUpdated</h3>
-              <p>
-                Fired when an interviewer adds or updates interview feedback.
-              </p>
+              <p>Fired when an interviewer adds or updates interview feedback.</p>
               <div>Request format:</div>
               <pre><code>{
   event: 'liveInterviewFeedbackUpdated',
