@@ -442,8 +442,8 @@
     duration: number,
     score: number,
     maxScore: number | null | undefined,
-    plagiarismLevel: number,
-    plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-',
+    plagiarismLevel: number, // deprecated
+    plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-', // deprecated
     url: string,
     codingScore?: number | null, // deprecated; use versionedCodingScore instead
     versionedCodingScore?: {
@@ -471,8 +471,8 @@
       version: 'codingScore2023',
       value: 575
     },
-    plagiarismLevel: 0.5,
-    plagiarismLabel: 'medium',
+    plagiarismLevel: 0,
+    plagiarismLabel: '-',
     url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
   }
 };</code></pre>
@@ -610,8 +610,8 @@
       version: 'original' | 'codingScore2023',
       value: number,
     },
-    plagiarismLevel: number,
-    plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-',
+    plagiarismLevel: number, // deprecated
+    plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-', // deprecated
     url: string,
   }
 };</code></pre>
@@ -633,8 +633,8 @@
       version: 'codingScore2023',
       value: 575
     },
-    plagiarismLevel: 0.5,
-    plagiarismLabel: 'medium',
+    plagiarismLevel: 0,
+    plagiarismLabel: '-',
     url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
   }
 };</code></pre>
@@ -736,8 +736,8 @@
       version: 'original' | 'codingScore2023',
       value: number,
     },
-    plagiarismLevel: number,
-    plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-',
+    plagiarismLevel: number, // deprecated
+    plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-', // deprecated
     url: string,
   }
 };</code></pre>
@@ -759,8 +759,8 @@
       version: 'codingScore2023',
       value: 575
     },
-    plagiarismLevel: 0.5,
-    plagiarismLabel: 'medium',
+    plagiarismLevel: 0,
+    plagiarismLabel: '-',
     url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
   }
 };</code></pre>
