@@ -43,10 +43,10 @@
                   <li><a href="#retry">Retry policy</a></li>
                   <li><a href="#payloads">Webhook payloads</a></li>
                 </ul>
-                <li>Events for CodeSignal Pre-Screen</li>
+                <li>Events for CodeSignal Assessments</li>
                 <ul>
                   <li>
-                    <a href="#clientworkflow">Company Client workflow</a>
+                    <a href="#clientworkflow">Organization user workflow</a>
                     <ul>
                       <li><a href="#companyTestSessionCreated">companyTestSessionCreated</a></li>
                     </ul>
@@ -78,16 +78,6 @@
                       <li><a href="#preScreenResultVerified">preScreenResultVerified</a></li>
                     </ul>
                   </li>
-                </ul>
-                <li>Events for CodeSignal Pre-Screen Certify</li>
-                <ul>
-                  <li><a href="#certifyworkflow">Pre-Screen Certify webhooks process flow</a></li>
-                  <li><a href="#certificationResultPending">certificationResultPending</a></li>
-                  <li><a href="#certificationResultPending">certificationResultNotCertified</a></li>
-                  <li><a href="#certificationResultShared">certificationResultShared</a></li>
-                  <li><a href="#certificationRequestExpired">certificationRequestExpired</a></li>
-                  <li><a href="#certificationRequestRejected">certificationRequestRejected</a></li>
-                  <li><a href="#certificationRequestsMerged">certificationRequestsMerged</a></li>
                 </ul>
                 <li>Events for CodeSignal Live Interview</li>
                 <ul>
@@ -339,7 +329,7 @@
           <div class="section">
             <h2>Events for CodeSignal Pre-Screen</h2>
             <div class="subsection">
-              <p id="clientworkflow">
+              <p>
                 Here is an overview of the end to end workflow of events for CodeSignal Pre-Screen.
               </p>
               <br />
@@ -350,7 +340,7 @@
               />
             </div>
             <div class="subsection">
-              <h3 id="clientworkflow">Company Client workflow</h3>
+              <h3 id="clientworkflow">Organization user workflow</h3>
               <br />
               <img
                 alt="Diagram of webhooks triggered on client flow"
@@ -762,252 +752,6 @@
     plagiarismLevel: 0,
     plagiarismLabel: '-',
     url: https://app.codesignal.com/test-result/oH3qeBC38oFsf7qB4?accessToken=A7HnBpab4aD7xm7Kp-iPhk2se5Wnxeg7x9GruANLzn
-  }
-};</code></pre>
-            </div>
-            <h2>Events for CodeSignal Pre-Screen Certify</h2>
-            <div class="subsection">
-              <h3 id="certifyworkflow">Pre-Screen Certify webhooks process flow</h3>
-              <img
-                alt="Diagram of webhooks process flow for CodeSignal Pre-Screen Certify"
-                width="100%"
-                src="../images/certify-events.png"
-              />
-            </div>
-            <div class="subsection">
-              <h3 id="certificationResultPending">certificationResultPending</h3>
-              <p>
-                Fired when a candidate finishes a standardized test session, if that session has
-                been autoshared with your company. The certification request is still pending and
-                has not yet been certified by the CodeSignal certification team.
-              </p>
-              <div>Request format:</div>
-              <pre><code>{
-  event: 'certificationResultPending',
-  triggeredOn: number,
-  payload: {
-    certificationRequestId: string,
-    testSessionId: string,
-    testId: string,
-    testTitle: string,
-    candidateEmail: string,
-    candidateName: string,
-    duration: number, // milliseconds
-    score: number,
-    maxScore: number,
-    codingScore: number,
-  }
-};</code></pre>
-              <div>Sample request:</div>
-              <pre><code>{
-  event: 'certificationResultPending',
-  triggeredOn: 1553720789347,
-  payload: {
-    certificationRequestId: 'lehjeh36dleh29',
-    testSessionId: '2TgbrRMkBiksAXqEd',
-    testId: 'dhey29hcl28hl28',
-    testTitle: 'General Coding Assessment',
-    candidateEmail: 'jane.doe@gmail.com',
-    candidateName: 'Jane Doe',
-    duration: 5286253,
-    score: 876,
-    maxScore: 1300,
-    codingScore: 793
-  }
-};</code></pre>
-            </div>
-            <div class="subsection">
-              <h3 id="certificationResultNotCertified">certificationResultNotCertified</h3>
-              <p>
-                Fired when a candidate's standardized test session is denied certification by the
-                CodeSignal certification team, if that test session has been autoshared with your
-                company. The certification request will remain open even after this, in case of
-                retakes or technical issues, so receiving this webhook is not "final" -- you may
-                subsequently receive a <strong>certificationResultShared</strong> or
-                <strong>certificationRequestExpired</strong> event.
-              </p>
-              <div>Request format:</div>
-              <pre><code>{
-  event: 'certificationResultNotCertified',
-  triggeredOn: number,
-  payload: {
-    certificationRequestId: string,
-    testId: string,
-    testTitle: string,
-    candidateEmail: string,
-    candidateName: string,
-    rejectedReasons: Array&lt;string&gt;,
-  }
-};</code></pre>
-              <div>Sample request:</div>
-              <pre><code>{
-  event: 'certificationResultNotCertified',
-  triggeredOn: 1553720789347,
-  payload: {
-    certificationRequestId: 'lehjeh36dleh29',
-    testId: 'dhey29hcl28hl28',
-    testTitle: 'General Coding Assessment',
-    candidateEmail: 'jane.doe@gmail.com',
-    candidateName: 'Jane Doe',
-    rejectedReasons: ['Unauthorized resource', 'Presence of others'],
-  }
-};</code></pre>
-            </div>
-            <div class="subsection">
-              <h3 id="certificationResultShared">certificationResultShared</h3>
-              <p>
-                Fired when a candidate shares their certification result(s) to a specific
-                certification request, or when the result they agreed to automatically share gets
-                certified.
-              </p>
-              <div>Request format:</div>
-              <pre><code>{
-  event: 'certificationResultShared',
-  triggeredOn: number,
-  payload: {
-    certificationRequestId: string,
-    testId: string,
-    testTitle: string,
-    candidateEmail: string,
-    candidateName: string,
-    sharedTestSessions: Array<{ // ordered by codingScore in descending order
-      codingScore: number,
-      score: number,
-      maxScore: number,
-      startDate: number,
-      finishDate: number,
-      duration: number,
-      id: string,
-      url: string,
-    }>
-  }
-};</code></pre>
-              <div>Sample request:</div>
-              <pre><code>{
-  event: 'certificationResultShared',
-  triggeredOn: 1553720789347,
-  payload: {
-    certificationRequestId: 'lehjeh36dleh29',
-    testId: 'dhey29hcl28hl28',
-    testTitle: 'General Coding Assessment',
-    candidateEmail: 'jane.doe@gmail.com',
-    candidateName: 'Jane Doe',
-    sharedTestSessions: [{
-      codingScore: 823,
-      score: 1148,
-      maxScore: 1300,
-      startDate: 1618504200000,
-      finishDate: 1618507800000,
-      duration: 3600000,
-      id: '272bu5Na997EdzmQ8',
-      url: https://app.codesignal.com/coding-report/8rRHAnRb3mW6RSfJG-a7RFoj2CESoWCji588zCnDJy/J3y6nqx6C89oMq998?accessToken=5ejNbPLLD79xFGNuQ-cEq43zQPQrQqkg2cn3danTag,
-    }, {
-      codingScore: 793,
-      score: 876,
-      maxScore: 1300,
-      startDate: 1619195400000,
-      finishDate: 1619199000000,
-      duration: 3600000,
-      id: '2TgbrRMkBiksAXqEd',
-      url: https://app.codesignal.com/coding-report/8rRHAnRb3mW6RSfJG-a7RFoj2CESoWCji588zCnDJy/J3y6nqx6C89oMq998?accessToken=5ejNbPLLD79xFGNuQ-cEq43zQPQrQqkg2cn3danTag,
-    }]
-  }
-};</code></pre>
-            </div>
-            <div class="subsection">
-              <h3 id="certificationRequestExpired">certificationRequestExpired</h3>
-              <p>
-                Fired when a request for a certified test result cannot be fulfilled within the
-                expiration window. The <strong>expiredReason</strong> field indicates whether the
-                expiration is due to the test not being taken at all, or whether the test could not
-                be certified by CodeSignal due to possibility/suspicion of cheating. If the latter,
-                a <strong>rejectedReasons</strong> field will also be provided.
-              </p>
-              <div>Request format:</div>
-              <pre><code>{
-  event: 'certificationRequestExpired',
-  triggeredOn: number,
-  payload: {
-    certificationRequestId: string,
-    testId: string,
-    testTitle: string,
-    candidateEmail: string,
-    candidateName: string,
-    expiredReason: 'testNotTaken' | 'notCertified',
-    rejectedReasons?: Array&lt;string&gt;,
-  }
-};</code></pre>
-              <div>Sample request:</div>
-              <pre><code>{
-  event: 'certificationRequestExpired',
-  triggeredOn: 1553720789347,
-  payload: {
-    certificationRequestId: 'lehjeh36dleh29',
-    testId: 'dhey29hcl28hl28',
-    testTitle: 'General Coding Assessment',
-    candidateEmail: 'jane.doe@gmail.com',
-    candidateName: 'Jane Doe',
-    expiredReason: 'notCertified',
-    rejectedReasons: ['Unauthorized resource', 'Presence of others'],
-  }
-};</code></pre>
-            </div>
-            <div class="subsection">
-              <h3 id="certificationRequestRejected">certificationRequestRejected</h3>
-              <p>
-                Fired when a candidate explicitly declines a request to share a certification
-                result. This means that they neither took the test upon request nor agreed to share
-                any pre-existing results.
-              </p>
-              <div>Request format:</div>
-              <pre><code>{
-  event: 'certificationRequestRejected',
-  triggeredOn: number,
-  payload: {
-    certificationRequestId: string,
-    testId: string,
-    testTitle: string,
-    candidateEmail: string,
-    candidateName: string,
-  }
-};</code></pre>
-              <div>Sample request:</div>
-              <pre><code>{
-  event: 'certificationRequestRejected',
-  triggeredOn: 1553720789347,
-  payload: {
-    certificationRequestId: 'lehjeh36dleh29',
-    testId: 'dhey29hcl28hl28',
-    testTitle: 'General Coding Assessment',
-    candidateEmail: 'jane.doe@gmail.com',
-    candidateName: 'Jane Doe',
-  }
-};</code></pre>
-            </div>
-            <div class="subsection">
-              <h3 id="certificationRequestsMerged">certificationRequestsMerged</h3>
-              <p>
-                This event is fired in case two Certification Requests get merged together. This can
-                happen if a candidate gets invited to take the same assessment using different email
-                addresses. In this case the newer request will be deleted, and its data will be
-                transferred to the older one.
-              </p>
-              <div>Request format:</div>
-              <pre><code>{
-  event: 'certificationRequestsMerged',
-  triggeredOn: number,
-  payload: {
-    deletedRequestId: string,
-    mergedRequestId: string,
-  }
-};</code></pre>
-              <div>Sample request:</div>
-              <pre><code>{
-  event: 'certificationRequestRejected',
-  triggeredOn: 1553720789347,
-  payload: {
-    deletedRequestId: 'lehjeh36dleh29',
-    mergedRequestId: 'dhey29hcl28hl28',
   }
 };</code></pre>
             </div>
