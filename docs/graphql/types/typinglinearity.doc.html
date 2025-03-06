@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32"/>
-    <title>CertificationRequestResult | CodeSignal GraphQL API</title>
+    <title>TypingLinearity | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -101,19 +101,9 @@
                 BillingInterval
             </a>
         </li>
-        <li  title="CertificationRequestStatus">
-            <a href="certificationrequeststatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CertificationRequestStatus
-            </a>
-        </li>
         <li  title="CertificationStatus">
             <a href="certificationstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CertificationStatus
-            </a>
-        </li>
-        <li  title="CertifyMigrationStatus">
-            <a href="certifymigrationstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CertifyMigrationStatus
             </a>
         </li>
         <li  title="ChangeType">
@@ -276,6 +266,11 @@
                 TestSessionStatus
             </a>
         </li>
+        <li class="slds-is-active" title="TypingLinearity">
+            <a href="typinglinearity.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                TypingLinearity
+            </a>
+        </li>
         <li  title="VerificationStatus">
             <a href="verificationstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 VerificationStatus
@@ -339,21 +334,6 @@
         <li  title="AddOrReplaceTaskLevelDiff">
             <a href="addorreplacetaskleveldiff.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 AddOrReplaceTaskLevelDiff
-            </a>
-        </li>
-        <li  title="CertificationRequest">
-            <a href="certificationrequest.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CertificationRequest
-            </a>
-        </li>
-        <li class="slds-is-active" title="CertificationRequestResult">
-            <a href="certificationrequestresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CertificationRequestResult
-            </a>
-        </li>
-        <li  title="CertificationRequests">
-            <a href="certificationrequests.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CertificationRequests
             </a>
         </li>
         <li  title="CertificationTests">
@@ -811,11 +791,6 @@
                 AdminFieldsInput
             </a>
         </li>
-        <li  title="CertificationRequestInput">
-            <a href="certificationrequestinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CertificationRequestInput
-            </a>
-        </li>
         <li  title="CodeChangeInput">
             <a href="codechangeinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CodeChangeInput
@@ -844,11 +819,6 @@
         <li  title="CompanyPlanSettingsInput">
             <a href="companyplansettingsinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CompanyPlanSettingsInput
-            </a>
-        </li>
-        <li  title="CreateCertificationRequestInput">
-            <a href="createcertificationrequestinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CreateCertificationRequestInput
             </a>
         </li>
         <li  title="CreateCodeReviewTaskInput">
@@ -1126,9 +1096,10 @@
         </div>
     </div>
     <div class="container">
-        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">CertificationRequestResult</h1>
-        <div class="slds-text-body--regular"></div>
+        <p class="slds-text-title--caps slds-text-color--weak">ENUM</p>
+        <h1 class="slds-text-heading--large">TypingLinearity</h1>
+        <div class="slds-text-body--regular"><p>Indicates extent to which the test-taker entered their solution line by line from top to bottom.</p>
+</div>
     </div>
 </section>
 <section>
@@ -1139,7 +1110,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">CertificationRequestResult</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">testSessionId</span>: <a class="support type" href="id.doc.html">ID</a> </span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">codingScore</span>: <a class="support type" href="codingscore.doc.html">CodingScore</a> </span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">date</span>: <a class="support type" href="timestamp.doc.html">Timestamp</a> </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">enum</span> <span class="identifier">TypingLinearity</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">low</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="meta">medium</span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">high</span></span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   Indicates that the linearity has not been evaluated.</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">not_applicable</span></span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -1150,9 +1121,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="certificationrequest.doc.html" title="CertificationRequest - A request for a standardized assessment from a company. A certification request is uniquely identified
-by its ID, or by the (companyId, testId, candidateEmail) triplet.">CertificationRequest<em>A request for a standardized assessment from a company. A certification request is uniquely identified
-by its ID, or by the (companyId, testId, candidateEmail) triplet.</em></a><li></ul>
+        <ul class="require-by"><li><a href="integrityreport.doc.html" title="IntegrityReport - ">IntegrityReport<em></em></a><li></ul>
     </div>
 </section>
 <footer>
