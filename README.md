@@ -3,7 +3,7 @@
 A place to put documentation about interacting with our APIs.
 
 ## Running locally
-You can view the documentation site locally by running `npm start` -- you just need to have Python 2 installed on your local machine.
+You can view the documentation site locally by running `npm start` -- you just need to have Python 3 installed on your local machine.
 The start script serves the docs here: http://localhost:8000
 
 Since it's a static site, you can also just open `/docs/index.html` directly in a web browser if you prefer.
