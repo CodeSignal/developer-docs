@@ -48,6 +48,8 @@
                   <li>
                     <a href="#customerworkflow">Customer workflow</a>
                     <ul>
+                      <li><a href="#assessmentCreated">assessmentCreated</a></li>
+                      <li><a href="#assessmentUpdated">assessmentUpdated</a></li>
                       <li><a href="#companyTestSessionCreated">companyTestSessionCreated</a></li>
                     </ul>
                   </li>
@@ -347,6 +349,54 @@
                 width="80%"
                 src="../images/client-events.svg"
               />
+            </div>
+            <div class="subsection">
+              <h3 id="assessmentCreated">assessmentCreated</h3>
+              <p>Fired when a new assessment is created.</p>
+              <div>Request format:</div>
+              <pre><code>{
+   event: 'assessmentCreated',
+   triggeredOn: number,
+   payload: {
+     assessmentId: string,
+     assessmentTitle: string,
+     assessmentStatus: 'active' | 'archived' | 'deleted'
+   }
+ };</code></pre>
+              <div>Sample request:</div>
+              <pre><code>{
+   event: 'assessmentCreated',
+   triggeredOn: 1553720789347,
+   payload: {
+     assessmentId: 'lehu382hdleh29',
+     assessmentTitle: 'General Coding Assessment',
+     assessmentStatus: 'active'
+   }
+ };</code></pre>
+            </div>
+            <div class="subsection">
+              <h3 id="assessmentUpdated">assessmentUpdated</h3>
+              <p>Fired when a new assessment is updated, including update events that do not end up changing anything on the assessment.</p>
+              <div>Request format:</div>
+              <pre><code>{
+   event: 'assessmentUpdated',
+   triggeredOn: number,
+   payload: {
+     assessmentId: string,
+     assessmentTitle: string,
+     assessmentStatus: 'active' | 'archived' | 'deleted'
+   }
+ };</code></pre>
+              <div>Sample request:</div>
+              <pre><code>{
+   event: 'assessmentUpdated',
+   triggeredOn: 1553720789347,
+   payload: {
+     assessmentId: 'lehu382hdleh29',
+     assessmentTitle: 'General Coding Assessment',
+     assessmentStatus: 'archived'
+   }
+ };</code></pre>
             </div>
             <div class="subsection">
               <h3 id="companyTestSessionCreated">companyTestSessionCreated</h3>
