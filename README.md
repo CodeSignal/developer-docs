@@ -13,9 +13,10 @@ Since it's a static site, you can also just open `/docs/index.html` directly in 
 The diagrams are generated using the following tool [diagrams](https://app.diagrams.net).
 
 1. Go to that specific URL.
-2. Select open existing diagram.
+2. Open existing diagram.
 3. Open `docs/diagrams/webhooks-flow.drawio` file.
 4. Make all the needed changes.
+  * Note that the document has 2 pages -- one with the entire flow and one with individual sections.
 5. Save the changes and put the resulting file on the repository to overwrite `docs/diagrams/webhooks-flow.drawio` file.
 
 To update each image:
