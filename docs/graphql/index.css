@@ -32,11 +32,11 @@ pre {
 }
 
 pre > code {
-    font-family: 'Fira Code', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .mono {
-    font-family: 'Fira Code', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .page-container {

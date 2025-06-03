@@ -38,7 +38,7 @@ pre {
 }
 
 pre > code {
-  font-family: 'Fira Code', monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 li:not(:first-child) {
@@ -46,7 +46,7 @@ li:not(:first-child) {
 }
 
 .mono {
-  font-family: 'Fira Code', monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .page-container {

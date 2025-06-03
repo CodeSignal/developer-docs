@@ -44,7 +44,7 @@ h3 {
 }
 
 .header {
-    font-family: 'Fira Code', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .header-title {
@@ -71,5 +71,5 @@ h3 {
 .doc-link {
     font-size: 1.3em;
     display: block;
-    font-family: 'Fira Code', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
