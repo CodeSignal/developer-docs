@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodeSignal Learn API for Developers</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" sizes="48x48">
+    <meta name="description" content="Developer API documentation for the Learn platform"/>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Load the Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+    <script>
+      let baseServerURL;
+      if (window.location.hostname === 'localhost') {
+        baseServerURL = `http://localhost:9000`;
+      } else {
+        baseServerURL = `https://codesignal.com`;
+      }
+      Scalar.createApiReference('#app', {
+        // List of sources will allow us to add multiple versions in the future
+        sources: [
+          {
+            id: 'v1',
+            title: 'Version 1.0.0',
+            url: `${baseServerURL}/learn/api/v1/openapi`,
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
