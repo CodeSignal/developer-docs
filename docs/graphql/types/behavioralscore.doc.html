@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32"/>
-    <title>FreeFormSolution | CodeSignal GraphQL API</title>
+    <title>BehavioralScore | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -94,6 +94,21 @@
         <li  title="AtsIdType">
             <a href="atsidtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 AtsIdType
+            </a>
+        </li>
+        <li  title="BehavioralDomainKey">
+            <a href="behavioraldomainkey.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BehavioralDomainKey
+            </a>
+        </li>
+        <li  title="BehavioralFit">
+            <a href="behavioralfit.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BehavioralFit
+            </a>
+        </li>
+        <li  title="BehavioralScoreLabel">
+            <a href="behavioralscorelabel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BehavioralScoreLabel
             </a>
         </li>
         <li  title="BillingInterval">
@@ -336,6 +351,31 @@
                 AddOrReplaceTaskLevelDiff
             </a>
         </li>
+        <li  title="BehavioralDimension">
+            <a href="behavioraldimension.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BehavioralDimension
+            </a>
+        </li>
+        <li  title="BehavioralPassingRange">
+            <a href="behavioralpassingrange.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BehavioralPassingRange
+            </a>
+        </li>
+        <li  title="BehavioralProfile">
+            <a href="behavioralprofile.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BehavioralProfile
+            </a>
+        </li>
+        <li class="slds-is-active" title="BehavioralScore">
+            <a href="behavioralscore.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BehavioralScore
+            </a>
+        </li>
+        <li  title="BehavioralSubfacets">
+            <a href="behavioralsubfacets.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BehavioralSubfacets
+            </a>
+        </li>
         <li  title="CertificationTests">
             <a href="certificationtests.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CertificationTests
@@ -489,11 +529,6 @@
         <li  title="Framework">
             <a href="framework.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Framework
-            </a>
-        </li>
-        <li class="slds-is-active" title="FreeFormSolution">
-            <a href="freeformsolution.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                FreeFormSolution
             </a>
         </li>
         <li  title="FrontendLibrary">
@@ -1092,8 +1127,8 @@
     </div>
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">FreeFormSolution</h1>
-        <div class="slds-text-body--regular"><p>Solution submitted to a free-text question.</p>
+        <h1 class="slds-text-heading--large">BehavioralScore</h1>
+        <div class="slds-text-body--regular"><p>Behavioral assessment score showing fit across personality dimensions.</p>
 </div>
     </div>
 </section>
@@ -1105,7 +1140,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">FreeFormSolution</span> <span class="keyword operator ts">implements</span> <a class="support type" href="tasksolution.doc.html">TaskSolution</a> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="comment line">#   Answer written in a free-text format.</span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="meta">answer</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line">#   The files that user has uploaded as a part of the answer.</span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="meta">uploadedFiles</span>: [<a class="support type" href="uploadedfile.doc.html">UploadedFile</a>] </span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">BehavioralScore</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Overall fit verdict.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">label</span>: <a class="support type" href="behavioralscorelabel.doc.html">BehavioralScoreLabel</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   Scores and fit status for each of the behavioral dimensions.</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">dimensions</span>: [<a class="support type" href="behavioraldimension.doc.html">BehavioralDimension</a>!]! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   The detailed sub-facet scores that feed into dimensional calculations.</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">subfacets</span>: <a class="support type" href="behavioralsubfacets.doc.html">BehavioralSubfacets</a>! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -1116,7 +1151,7 @@
             </a>
             Required by
         </h2>
-        <div class="require-by anyone">This element is not required by anyone</div>
+        <ul class="require-by"><li><a href="companytestsessionresult.doc.html" title="CompanyTestSessionResult - The result of a completed company test session.">CompanyTestSessionResult<em>The result of a completed company test session.</em></a><li><li><a href="standardizedtestsessionresult.doc.html" title="StandardizedTestSessionResult - The result of a completed standardized test session.">StandardizedTestSessionResult<em>The result of a completed standardized test session.</em></a><li><li><a href="testsessionresult.doc.html" title="TestSessionResult - ">TestSessionResult<em></em></a><li></ul>
     </div>
 </section>
 <footer>
