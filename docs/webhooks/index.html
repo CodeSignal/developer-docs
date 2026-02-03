@@ -427,7 +427,8 @@
      testId: string,
      testTitle: string,
      candidateEmail: string,
-     candidateName: string
+     candidateName: string,
+     externalId?: string,
    }
  };</code></pre>
               <div>Sample request:</div>
@@ -585,7 +586,8 @@
     testId: string,
     testTitle: string,
     candidateEmail: string,
-    candidateName: string
+    candidateName: string,
+    externalId?: string,
   }
 };</code></pre>
               <div>Sample request:</div>
@@ -670,6 +672,7 @@
     plagiarismLevel: number, // deprecated
     plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-', // deprecated
     url: string,
+    externalId?: string,
   }
 };</code></pre>
               <div>Sample request:</div>
@@ -710,6 +713,7 @@
     candidateEmail: string,
     candidateName: string,
     integrityReviewSuggested: boolean,
+    externalId?: string,
   }
 };</code></pre>
               <div>Sample request:</div>
@@ -755,6 +759,7 @@
     candidateEmail: string,
     candidateName: string,
     rejectedReasons?: Array&lt;string&gt;,
+    externalId?: string,
   }
 };</code></pre>
               <div>Sample request:</div>
@@ -796,6 +801,7 @@
     plagiarismLevel: number, // deprecated
     plagiarismLabel: 'none' | 'low' | 'medium' | 'high' | '-', // deprecated
     url: string,
+    externalId?: string,
   }
 };</code></pre>
               <div>Sample request:</div>
