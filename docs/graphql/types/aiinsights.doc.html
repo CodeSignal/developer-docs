@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
         <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32"/>
-    <title>DatabaseTestCaseInput | CodeSignal GraphQL API</title>
+    <title>AiInsights | CodeSignal GraphQL API</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -386,7 +386,7 @@
                 AddOrReplaceTaskLevelDiff
             </a>
         </li>
-        <li  title="AiInsights">
+        <li class="slds-is-active" title="AiInsights">
             <a href="aiinsights.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 AiInsights
             </a>
@@ -1041,7 +1041,7 @@
                 DatabaseLanguageTimeLimit
             </a>
         </li>
-        <li class="slds-is-active" title="DatabaseTestCaseInput">
+        <li  title="DatabaseTestCaseInput">
             <a href="databasetestcaseinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 DatabaseTestCaseInput
             </a>
@@ -1276,9 +1276,10 @@
         </div>
     </div>
     <div class="container">
-        <p class="slds-text-title--caps slds-text-color--weak">INPUT_OBJECT</p>
-        <h1 class="slds-text-heading--large">DatabaseTestCaseInput</h1>
-        <div class="slds-text-body--regular"></div>
+        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
+        <h1 class="slds-text-heading--large">AiInsights</h1>
+        <div class="slds-text-body--regular"><p>AI-generated insights about a completed test session.</p>
+</div>
     </div>
 </section>
 <section>
@@ -1289,7 +1290,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">input</span> <span class="identifier">DatabaseTestCaseInput</span> {</td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"><span class="comment line">#   The script that creates the tables and populates data for the test input.</span></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   It is a combination of SQL commands and is equivalent to a SQL database dump.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">input</span>: <a class="support type" href="string.doc.html">String</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L18" class="td-index">18</td><td id="LC18" class="td-code"><span class="tab"><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   The expected output table in a comma-separated format which will be used to </span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="comment line">#   validate the correctness of the solution.</span></span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line">#   format:</span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   </span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="comment line">#   "field_1,field_2,...</span></span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"><span class="tab"><span class="comment line">#   </span></span></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   x_1,y_1,...</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="comment line">#   </span></span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"><span class="tab"><span class="comment line">#   x_2,y_2,...</span></span></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="comment line">#   </span></span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"><span class="tab"><span class="comment line">#   ..."</span></span></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code"><span class="tab"><span class="meta">output</span>: <a class="support type" href="string.doc.html">String</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L19" class="td-index">19</td><td id="LC19" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">AiInsights</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   A human-readable summary of the test-taker's performance.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">summary</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -1300,7 +1301,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="databaseenvironmentconfig.doc.html" title="DatabaseEnvironmentConfig - ">DatabaseEnvironmentConfig<em></em></a><li></ul>
+        <ul class="require-by"><li><a href="companytestsessionresult.doc.html" title="CompanyTestSessionResult - The result of a completed company test session.">CompanyTestSessionResult<em>The result of a completed company test session.</em></a><li><li><a href="standardizedtestsessionresult.doc.html" title="StandardizedTestSessionResult - The result of a completed standardized test session.">StandardizedTestSessionResult<em>The result of a completed standardized test session.</em></a><li><li><a href="testsessionresult.doc.html" title="TestSessionResult - ">TestSessionResult<em></em></a><li></ul>
     </div>
 </section>
 <footer>
