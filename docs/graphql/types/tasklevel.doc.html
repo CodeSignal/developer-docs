@@ -266,11 +266,6 @@
                 ScoringModelType
             </a>
         </li>
-        <li  title="ServicePlanStatus">
-            <a href="serviceplanstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                ServicePlanStatus
-            </a>
-        </li>
         <li  title="SkillType">
             <a href="skilltype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 SkillType
@@ -1006,16 +1001,6 @@
                 CodeReviewFileInput
             </a>
         </li>
-        <li  title="CompanyPlanInput">
-            <a href="companyplaninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CompanyPlanInput
-            </a>
-        </li>
-        <li  title="CompanyPlanSettingsInput">
-            <a href="companyplansettingsinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CompanyPlanSettingsInput
-            </a>
-        </li>
         <li  title="CreateCodeReviewTaskInput">
             <a href="createcodereviewtaskinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CreateCodeReviewTaskInput
@@ -1034,6 +1019,11 @@
         <li  title="CreateDatabaseTaskInput">
             <a href="createdatabasetaskinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CreateDatabaseTaskInput
+            </a>
+        </li>
+        <li  title="CreateFilesystemLevelInput">
+            <a href="createfilesystemlevelinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CreateFilesystemLevelInput
             </a>
         </li>
         <li  title="CreateFreeCodingTaskInput">
@@ -1071,11 +1061,6 @@
                 CreateTaskOptionsInput
             </a>
         </li>
-        <li  title="CustomFeaturesInput">
-            <a href="customfeaturesinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CustomFeaturesInput
-            </a>
-        </li>
         <li  title="DatabaseEnvironmentConfig">
             <a href="databaseenvironmentconfig.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 DatabaseEnvironmentConfig
@@ -1109,6 +1094,11 @@
         <li  title="EditDatabaseTaskInput">
             <a href="editdatabasetaskinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 EditDatabaseTaskInput
+            </a>
+        </li>
+        <li  title="EditFilesystemLevelInput">
+            <a href="editfilesystemlevelinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                EditFilesystemLevelInput
             </a>
         </li>
         <li  title="EditFreeCodingTaskInput">
@@ -1181,6 +1171,11 @@
                 FeedbackSettingsInput
             </a>
         </li>
+        <li  title="FilesystemDiffInput">
+            <a href="filesystemdiffinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FilesystemDiffInput
+            </a>
+        </li>
         <li  title="FilesystemExecutionEnvironmentInput">
             <a href="filesystemexecutionenvironmentinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 FilesystemExecutionEnvironmentInput
@@ -1189,6 +1184,11 @@
         <li  title="FilesystemFileInput">
             <a href="filesystemfileinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 FilesystemFileInput
+            </a>
+        </li>
+        <li  title="FilesystemLevelExecutionEnvironmentInput">
+            <a href="filesystemlevelexecutionenvironmentinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FilesystemLevelExecutionEnvironmentInput
             </a>
         </li>
         <li  title="FrontendLibraryInput">
@@ -1345,7 +1345,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">TaskLevel</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Unique identifier.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   The question to which the level belongs.</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">parentTask</span>: <a class="support type" href="singleenvironmenttask.doc.html">SingleEnvironmentTask</a>! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="meta">executionEnvironments</span>: [<a class="support type" href="tasklevelexecutionenvironment.doc.html">TaskLevelExecutionEnvironment</a>] </span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">TaskLevel</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Unique identifier.</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   The question to which the level belongs. Resolves to the concrete question type</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="comment line">#   (e.g. SingleEnvironmentTask or FilesystemTask) — use an inline fragment to </span></span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line">#   select</span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   type-specific fields.</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">parentTask</span>: <a class="support type" href="commontask.doc.html">CommonTask</a>! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="meta">executionEnvironments</span>: [<a class="support type" href="tasklevelexecutionenvironment.doc.html">TaskLevelExecutionEnvironment</a>] </span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
@@ -1356,7 +1356,7 @@
             </a>
             Required by
         </h2>
-        <ul class="require-by"><li><a href="query.doc.html" title="Query - ">Query<em></em></a><li><li><a href="singleenvironmenttask.doc.html" title="SingleEnvironmentTask - A question that is in the single-environment format">SingleEnvironmentTask<em>A question that is in the single-environment format</em></a><li><li><a href="skillareatask.doc.html" title="SkillAreaTask - The questions contribute to a skill area
+        <ul class="require-by"><li><a href="filesystemtask.doc.html" title="FilesystemTask - ">FilesystemTask<em></em></a><li><li><a href="query.doc.html" title="Query - ">Query<em></em></a><li><li><a href="singleenvironmenttask.doc.html" title="SingleEnvironmentTask - A question that is in the single-environment format">SingleEnvironmentTask<em>A question that is in the single-environment format</em></a><li><li><a href="skillareatask.doc.html" title="SkillAreaTask - The questions contribute to a skill area
 
 - Cost complexity: 1">SkillAreaTask<em>The questions contribute to a skill area
 

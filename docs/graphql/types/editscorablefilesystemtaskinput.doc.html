@@ -266,11 +266,6 @@
                 ScoringModelType
             </a>
         </li>
-        <li  title="ServicePlanStatus">
-            <a href="serviceplanstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                ServicePlanStatus
-            </a>
-        </li>
         <li  title="SkillType">
             <a href="skilltype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 SkillType
@@ -1006,16 +1001,6 @@
                 CodeReviewFileInput
             </a>
         </li>
-        <li  title="CompanyPlanInput">
-            <a href="companyplaninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CompanyPlanInput
-            </a>
-        </li>
-        <li  title="CompanyPlanSettingsInput">
-            <a href="companyplansettingsinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CompanyPlanSettingsInput
-            </a>
-        </li>
         <li  title="CreateCodeReviewTaskInput">
             <a href="createcodereviewtaskinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CreateCodeReviewTaskInput
@@ -1034,6 +1019,11 @@
         <li  title="CreateDatabaseTaskInput">
             <a href="createdatabasetaskinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 CreateDatabaseTaskInput
+            </a>
+        </li>
+        <li  title="CreateFilesystemLevelInput">
+            <a href="createfilesystemlevelinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CreateFilesystemLevelInput
             </a>
         </li>
         <li  title="CreateFreeCodingTaskInput">
@@ -1071,11 +1061,6 @@
                 CreateTaskOptionsInput
             </a>
         </li>
-        <li  title="CustomFeaturesInput">
-            <a href="customfeaturesinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                CustomFeaturesInput
-            </a>
-        </li>
         <li  title="DatabaseEnvironmentConfig">
             <a href="databaseenvironmentconfig.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 DatabaseEnvironmentConfig
@@ -1109,6 +1094,11 @@
         <li  title="EditDatabaseTaskInput">
             <a href="editdatabasetaskinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 EditDatabaseTaskInput
+            </a>
+        </li>
+        <li  title="EditFilesystemLevelInput">
+            <a href="editfilesystemlevelinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                EditFilesystemLevelInput
             </a>
         </li>
         <li  title="EditFreeCodingTaskInput">
@@ -1181,6 +1171,11 @@
                 FeedbackSettingsInput
             </a>
         </li>
+        <li  title="FilesystemDiffInput">
+            <a href="filesystemdiffinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FilesystemDiffInput
+            </a>
+        </li>
         <li  title="FilesystemExecutionEnvironmentInput">
             <a href="filesystemexecutionenvironmentinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 FilesystemExecutionEnvironmentInput
@@ -1189,6 +1184,11 @@
         <li  title="FilesystemFileInput">
             <a href="filesystemfileinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 FilesystemFileInput
+            </a>
+        </li>
+        <li  title="FilesystemLevelExecutionEnvironmentInput">
+            <a href="filesystemlevelexecutionenvironmentinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FilesystemLevelExecutionEnvironmentInput
             </a>
         </li>
         <li  title="FrontendLibraryInput">
@@ -1347,7 +1347,7 @@ weight.</p>
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">input</span> <span class="identifier">EditScorableFilesystemTaskInput</span> {</td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"><span class="comment line">#   Unique question name.</span></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a></span></td></tr></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="comment line">#   The labels for this question.</span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="meta">labels</span>: [<a class="support type" href="string.doc.html">String</a>!]</span></td></tr></span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"><span class="tab"><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line">#   The question execution environments. Each environment must include at least one </span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   unit test with a positive weight.</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">executionEnvironments</span>: [<a class="support type" href="filesystemexecutionenvironmentinput.doc.html">FilesystemExecutionEnvironmentInput</a>!]</span></td></tr></span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"><span class="tab"><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   Whether network access is enabled.</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="meta">enableNetwork</span>: <a class="support type" href="boolean.doc.html">Boolean</a></span></td></tr></span></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code"><span class="tab"><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="comment line">#   Whether persistent session preview is enabled.</span></span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"><span class="tab"><span class="meta">persistentSessionPreview</span>: <a class="support type" href="boolean.doc.html">Boolean</a></span></td></tr></span></td></tr><tr class="row"><td id="L23" class="td-index">23</td><td id="LC23" class="td-code"><span class="tab"><tr class="row"><td id="L18" class="td-index">18</td><td id="LC18" class="td-code"><span class="tab"><span class="comment line">#   The response rubric for AI checker evaluation.</span></span></td></tr><tr class="row"><td id="L19" class="td-index">19</td><td id="LC19" class="td-code"><span class="tab"><span class="comment line">#   When provided and non-empty, the question will use an AI checker (hasAiChecker </span></span></td></tr><tr class="row"><td id="L20" class="td-index">20</td><td id="LC20" class="td-code"><span class="tab"><span class="comment line">#   will be true).</span></span></td></tr><tr class="row"><td id="L21" class="td-index">21</td><td id="LC21" class="td-code"><span class="tab"><span class="comment line">#   When set to an empty string, the AI checker will be disabled.</span></span></td></tr><tr class="row"><td id="L22" class="td-index">22</td><td id="LC22" class="td-code"><span class="tab"><span class="meta">responseRubric</span>: <a class="support type" href="string.doc.html">String</a></span></td></tr></span></td></tr><tr class="row"><td id="L26" class="td-index">26</td><td id="LC26" class="td-code"><span class="tab"><tr class="row"><td id="L24" class="td-index">24</td><td id="LC24" class="td-code"><span class="tab"><span class="comment line">#   View configuration overrides.</span></span></td></tr><tr class="row"><td id="L25" class="td-index">25</td><td id="LC25" class="td-code"><span class="tab"><span class="meta">viewOverrides</span>: <a class="support type" href="viewoverridesinput.doc.html">ViewOverridesInput</a></span></td></tr></span></td></tr><tr class="row"><td id="L27" class="td-index">27</td><td id="LC27" class="td-code">}</td></tr></tbody></table></code>
+        <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">input</span> <span class="identifier">EditScorableFilesystemTaskInput</span> {</td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"><span class="comment line">#   Unique question name.</span></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a></span></td></tr></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="comment line">#   The labels for this question.</span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="meta">labels</span>: [<a class="support type" href="string.doc.html">String</a>!]</span></td></tr></span></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line">#   The execution environments for a flat (single-level) question. Each environment</span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   must include at least one unit test with a positive weight. Mutually exclusive </span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="comment line">#   with 'levels'.</span></span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"><span class="tab"><span class="meta">executionEnvironments</span>: [<a class="support type" href="filesystemexecutionenvironmentinput.doc.html">FilesystemExecutionEnvironmentInput</a>!]</span></td></tr></span></td></tr><tr class="row"><td id="L19" class="td-index">19</td><td id="LC19" class="td-code"><span class="tab"><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="comment line">#   The ordered levels of a progressive question. Levels are matched to existing </span></span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"><span class="tab"><span class="comment line">#   ones by 'id';</span></span></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="comment line">#   levels without an 'id' are created, and existing levels absent from the list are </span></span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"><span class="tab"><span class="comment line">#   removed.</span></span></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code"><span class="tab"><span class="comment line">#   At least 2 levels must remain. Mutually exclusive with 'executionEnvironments'.</span></span></td></tr><tr class="row"><td id="L18" class="td-index">18</td><td id="LC18" class="td-code"><span class="tab"><span class="meta">levels</span>: [<a class="support type" href="editfilesystemlevelinput.doc.html">EditFilesystemLevelInput</a>!]</span></td></tr></span></td></tr><tr class="row"><td id="L22" class="td-index">22</td><td id="LC22" class="td-code"><span class="tab"><tr class="row"><td id="L20" class="td-index">20</td><td id="LC20" class="td-code"><span class="tab"><span class="comment line">#   Whether network access is enabled.</span></span></td></tr><tr class="row"><td id="L21" class="td-index">21</td><td id="LC21" class="td-code"><span class="tab"><span class="meta">enableNetwork</span>: <a class="support type" href="boolean.doc.html">Boolean</a></span></td></tr></span></td></tr><tr class="row"><td id="L25" class="td-index">25</td><td id="LC25" class="td-code"><span class="tab"><tr class="row"><td id="L23" class="td-index">23</td><td id="LC23" class="td-code"><span class="tab"><span class="comment line">#   Whether persistent session preview is enabled.</span></span></td></tr><tr class="row"><td id="L24" class="td-index">24</td><td id="LC24" class="td-code"><span class="tab"><span class="meta">persistentSessionPreview</span>: <a class="support type" href="boolean.doc.html">Boolean</a></span></td></tr></span></td></tr><tr class="row"><td id="L31" class="td-index">31</td><td id="LC31" class="td-code"><span class="tab"><tr class="row"><td id="L26" class="td-index">26</td><td id="LC26" class="td-code"><span class="tab"><span class="comment line">#   The response rubric for AI checker evaluation.</span></span></td></tr><tr class="row"><td id="L27" class="td-index">27</td><td id="LC27" class="td-code"><span class="tab"><span class="comment line">#   When provided and non-empty, the question will use an AI checker (hasAiChecker </span></span></td></tr><tr class="row"><td id="L28" class="td-index">28</td><td id="LC28" class="td-code"><span class="tab"><span class="comment line">#   will be true).</span></span></td></tr><tr class="row"><td id="L29" class="td-index">29</td><td id="LC29" class="td-code"><span class="tab"><span class="comment line">#   When set to an empty string, the AI checker will be disabled.</span></span></td></tr><tr class="row"><td id="L30" class="td-index">30</td><td id="LC30" class="td-code"><span class="tab"><span class="meta">responseRubric</span>: <a class="support type" href="string.doc.html">String</a></span></td></tr></span></td></tr><tr class="row"><td id="L34" class="td-index">34</td><td id="LC34" class="td-code"><span class="tab"><tr class="row"><td id="L32" class="td-index">32</td><td id="LC32" class="td-code"><span class="tab"><span class="comment line">#   View configuration overrides.</span></span></td></tr><tr class="row"><td id="L33" class="td-index">33</td><td id="LC33" class="td-code"><span class="tab"><span class="meta">viewOverrides</span>: <a class="support type" href="viewoverridesinput.doc.html">ViewOverridesInput</a></span></td></tr></span></td></tr><tr class="row"><td id="L35" class="td-index">35</td><td id="LC35" class="td-code">}</td></tr></tbody></table></code>
     </div>
 </section>
 <section>
