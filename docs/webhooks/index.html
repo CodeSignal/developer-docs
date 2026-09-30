@@ -35,7 +35,14 @@
                 </ul>
                 <li>Usage</li>
                 <ul>
-                  <li><a href="#auth">Authentication</a></li>
+                  <li>
+                    <a href="#auth">Authentication</a>
+                    <ul>
+                      <li><a href="#authstandard">Verifying webhook-signature</a></li>
+                      <li><a href="#authkeyformat">Secret key format</a></li>
+                      <li><a href="#authlegacy">Verifying X-CodeSignal-Signature (legacy)</a></li>
+                    </ul>
+                  </li>
                   <li><a href="#eventhandling">Event handling</a></li>
                   <li><a href="#retry">Errors and retry policy</a></li>
                   <li><a href="#payloads">Webhook payloads</a></li>
@@ -114,12 +121,11 @@
                     about.
                   </li>
                   <li>
-                    <strong>Secret key</strong>: (optional) A string used to generate a signature
-                    header that you can use to verify that the webhook data came from CodeSignal.
-                    The secret key is used in conjunction with the webhook's payload to generate a
-                    digital signature. Although it is not strictly required, we strongly encourage
-                    use of the secret key to verify that webhooks are actually coming from our
-                    platform.
+                    <strong>Secret key</strong>: A key used to sign every request, so that you can
+                    verify that it came from CodeSignal. We generate one automatically, and it
+                    can't be empty. See
+                    <a href="#auth">Authentication</a> for how to verify signatures and which key
+                    formats are supported.
                   </li>
                   <li>
                     <strong>Owner emails</strong>: (optional) If the webhook cannot deliver its
@@ -128,7 +134,13 @@
                   </li>
                   <li>
                     <strong>Custom headers</strong>: (optional) Custom HTTP request headers that we
-                    will send to your endpoint in addition to the signature header.
+                    will send to your endpoint in addition to the signature headers. The following
+                    header names are reserved and can't be used (case-insensitive):
+                    <span class="mono">Content-Type</span>,
+                    <span class="mono">X-CodeSignal-Signature</span>,
+                    <span class="mono">webhook-id</span>,
+                    <span class="mono">webhook-timestamp</span>, and
+                    <span class="mono">webhook-signature</span>.
                   </li>
                 </ul>
               </div>
@@ -162,8 +174,9 @@
                   </li>
                   <li>
                     Fill out all of the required fields, as well as optional ones if you need them.
-                    We will generate a <strong>Secret key</strong> automatically, but you can
-                    overwrite it with a custom one.
+                    We will generate a <strong>Secret key</strong> automatically. You can replace it
+                    with a custom one, but we recommend keeping the generated key (see
+                    <a href="#authkeyformat">Secret key format</a>).
                     <img
                       alt="Create webhook modal"
                       src="https://codesignal.s3.amazonaws.com/uploads/1560879319085/2019-06-18_10-34-49.png"
@@ -195,12 +208,170 @@
             <h2>Usage</h2>
             <div class="subsection">
               <h3 id="auth">Authentication</h3>
+              <div>
+                CodeSignal sends the following HTTP headers with every webhook request, so that you
+                can verify that it came from CodeSignal and detect duplicate or replayed requests:
+                <ul>
+                  <li>
+                    <strong class="mono">webhook-id</strong>: A unique identifier for the event.
+                    It stays the same when a delivery is retried, so you can use it to skip events
+                    you've already processed. If several of your webhooks receive the same event,
+                    they all send the same <span class="mono">webhook-id</span>. Treat it as an
+                    opaque string, since its format may vary.
+                  </li>
+                  <li>
+                    <strong class="mono">webhook-timestamp</strong>: When this delivery attempt
+                    was sent, in seconds since the Unix epoch. Each retry has a new timestamp.
+                  </li>
+                  <li>
+                    <strong class="mono">webhook-signature</strong>: A signature of the event ID,
+                    timestamp, and full request body, as defined by the
+                    <a href="https://www.standardwebhooks.com/">Standard Webhooks</a>
+                    specification. This header is only sent if your secret key is in the
+                    <a href="#authkeyformat">Standard Webhooks format</a>.
+                  </li>
+                  <li>
+                    <strong class="mono">X-CodeSignal-Signature</strong>: A
+                    <a href="#authlegacy">legacy signature</a> that covers the endpoint URL, event
+                    type, and <span class="mono">triggeredOn</span> timestamp, but not the rest of
+                    the request body.
+                  </li>
+                </ul>
+                We recommend verifying <span class="mono">webhook-signature</span>, since it
+                covers the full request body and supports replay detection.
+              </div>
+              <h4 id="authstandard">Verifying webhook-signature</h4>
               <p>
-                For webhooks with a secret key, CodeSignal will sign every request with a
-                <span class="mono">X-CodeSignal-Signature</span> HTTP header, generated using the
-                following algorithm:
+                Since <span class="mono">webhook-signature</span> follows the Standard Webhooks
+                specification, you can verify it with one of the official
+                <a href="https://github.com/standard-webhooks/standard-webhooks/tree/main/libraries"
+                  >Standard Webhooks libraries</a
+                >, passing your full secret key, including the <span class="mono">whsec_</span>
+                prefix. For example, in Node.js:
               </p>
-              <pre><code>getSignature(secretKey, endpointUrl, { eventType = '', triggeredOn = '' }) {
+              <pre><code>import { Webhook } from 'standardwebhooks';
+
+const webhook = new Webhook(secretKey);
+// Throws if the signature is invalid or the timestamp is outside the allowed window
+const event = webhook.verify(rawBody, request.headers);</code></pre>
+              <p>
+                Always verify against the raw request body, exactly as it was received. If you
+                parse the JSON and serialize it again before verifying, even small formatting
+                differences will make the signature fail to match. In Express, for example, use
+                <span class="mono">express.raw({ type: 'application/json' })</span> instead of
+                <span class="mono">express.json()</span> for your webhook route.
+              </p>
+              <div>
+                To verify the signature without a library:
+                <ol>
+                  <li>
+                    Reject the request if any of the <span class="mono">webhook-id</span>,
+                    <span class="mono">webhook-timestamp</span>, or
+                    <span class="mono">webhook-signature</span> headers are missing, or if
+                    <span class="mono">webhook-timestamp</span> is too far from the current time
+                    (for example, more than five minutes), to protect against replayed requests.
+                  </li>
+                  <li>
+                    Remove the <span class="mono">whsec_</span> prefix from your secret key and
+                    base64-decode the rest to get the signing key.
+                  </li>
+                  <li>
+                    Join the <span class="mono">webhook-id</span> header, the
+                    <span class="mono">webhook-timestamp</span> header, and the raw request body
+                    with periods (<span class="mono">.</span>) in between.
+                  </li>
+                  <li>
+                    Compute the HMAC-SHA256 of that string using the signing key, and
+                    base64-encode the result.
+                  </li>
+                  <li>
+                    The <span class="mono">webhook-signature</span> header contains one or more
+                    space-separated signatures, each in the form
+                    <span class="mono">v1,&lt;signature&gt;</span>. Compare your result with each
+                    <span class="mono">v1</span> signature using a constant-time comparison.
+                  </li>
+                </ol>
+              </div>
+              <pre><code>import crypto from 'node:crypto';
+
+function verifyWebhookSignature(secretKey, rawBody, headers) {
+  const id = headers['webhook-id'];
+  const timestamp = headers['webhook-timestamp'];
+  const signatureHeader = headers['webhook-signature'];
+  if (!id || !timestamp || !signatureHeader) {
+    return false;
+  }
+
+  const age = Math.abs(Date.now() / 1000 - Number(timestamp));
+  if (!Number.isFinite(age) || age > 5 * 60) {
+    return false;
+  }
+
+  const signingKey = Buffer.from(secretKey.slice('whsec_'.length), 'base64');
+  const signedContent = `${id}.${timestamp}.${rawBody}`;
+  const expected = crypto.createHmac('sha256', signingKey).update(signedContent).digest();
+
+  return signatureHeader.split(' ').some((versionedSignature) => {
+    const [version, signature = ''] = versionedSignature.split(',');
+    const actual = Buffer.from(signature, 'base64');
+    return (
+      version === 'v1' &&
+      actual.length === expected.length &&
+      crypto.timingSafeEqual(actual, expected)
+    );
+  });
+}</code></pre>
+              <h4 id="authkeyformat">Secret key format</h4>
+              <p>
+                Secret keys generated by CodeSignal start with <span class="mono">whsec_</span>,
+                followed by a base64-encoded random value, following the Standard Webhooks format.
+                If you set a custom secret key that starts with <span class="mono">whsec_</span>,
+                the rest of it must be standard, padded base64 (not URL-safe) that encodes at least
+                24 bytes. For example, you can generate one with
+                <span class="mono">echo "whsec_$(openssl rand -base64 32)"</span>.
+              </p>
+              <p>
+                If your secret key doesn't start with <span class="mono">whsec_</span> (for
+                example, if it was created before this format was introduced), your webhook will
+                still receive <span class="mono">webhook-id</span>,
+                <span class="mono">webhook-timestamp</span>, and
+                <span class="mono">X-CodeSignal-Signature</span>, but not
+                <span class="mono">webhook-signature</span>.
+              </p>
+              <div>
+                To start receiving <span class="mono">webhook-signature</span>, switch to a new key.
+                The new key also changes <span class="mono">X-CodeSignal-Signature</span>, and
+                CodeSignal starts using it as soon as you save the webhook, so follow these steps
+                to avoid failed deliveries:
+                <ol>
+                  <li>
+                    Edit your webhook on the
+                    <a href="https://app.codesignal.com/client-dashboard/integrations/webhooks"
+                      >Manage Webhooks</a
+                    >
+                    page, click "Regenerate key", and copy the new key. Don't save yet.
+                  </li>
+                  <li>Update your endpoint to accept signatures from either the old or new key.</li>
+                  <li>Save the webhook.</li>
+                  <li>
+                    Once deliveries are verifying with the new key, remove the old key from your
+                    endpoint.
+                  </li>
+                </ol>
+              </div>
+              <p>
+                If your webhook has an empty secret key, it keeps receiving events, but you need to
+                generate a key before you can save changes to it.
+              </p>
+              <h4 id="authlegacy">Verifying X-CodeSignal-Signature (legacy)</h4>
+              <p>
+                CodeSignal continues to send the <span class="mono">X-CodeSignal-Signature</span>
+                header, so existing integrations keep working. It's generated using the following
+                algorithm:
+              </p>
+              <pre><code>import crypto from 'node:crypto';
+
+function getSignature(secretKey, endpointUrl, { eventType = '', triggeredOn = '' }) {
   const plainText = `${endpointUrl}${eventType}${triggeredOn}`;
   const hash = crypto.createHmac('sha256', secretKey);
   hash.update(plainText);
@@ -208,7 +379,8 @@
 }</code></pre>
               <p>
                 Here, <span class="mono">triggeredOn</span> is the timestamp present in every event
-                payload.
+                payload. This signature doesn't cover the rest of the request body and doesn't
+                change between retries.
               </p>
             </div>
             <div class="subsection">
@@ -226,7 +398,10 @@
                 <p>
                   If CodeSignal receives any response other than a 200 OK from the endpoint,
                   the endpoint will be marked unhealthy, and CodeSignal will attempt to resend the
-                  event after a delay (up to 25 attempts total).
+                  event after a delay (up to 25 attempts total). Each retry has the same
+                  <span class="mono">webhook-id</span> header as the original attempt, and a new
+                  <span class="mono">webhook-timestamp</span> (see
+                  <a href="#auth">Authentication</a>).
                 </p>
                 <p>
                   CodeSignal is looking for a 200 OK response from the endpoint URL in order to continue processing
