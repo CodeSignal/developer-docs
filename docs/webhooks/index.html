@@ -180,7 +180,7 @@
                     <img
                       alt="Create webhook modal"
                       src="https://codesignal.s3.amazonaws.com/uploads/1560879319085/2019-06-18_10-34-49.png"
-                      style="width: 50%"
+                      style="display: block; width: 50%"
                     />
                   </li>
                   <li>
@@ -215,9 +215,10 @@
                   <li>
                     <strong class="mono">webhook-id</strong>: A unique identifier for the event.
                     It stays the same when a delivery is retried, so you can use it to skip events
-                    you've already processed. If several of your webhooks receive the same event,
-                    they all send the same <span class="mono">webhook-id</span>. Treat it as an
-                    opaque string, since its format may vary.
+                    you've already processed. If several of your webhooks are notified about the
+                    same event, CodeSignal sends the same <span class="mono">webhook-id</span> to
+                    each of their endpoints. Treat it as an opaque string, since its format may
+                    vary.
                   </li>
                   <li>
                     <strong class="mono">webhook-timestamp</strong>: When this delivery attempt
